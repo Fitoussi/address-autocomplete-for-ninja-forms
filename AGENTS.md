@@ -1,0 +1,19 @@
+# Standalone plugin guidance
+
+Read docs/README.md before changing this repository. Inspect its branch, HEAD,
+remote and entire working tree; preserve user changes.
+
+- Keep this autocomplete-only. No WPGeo Framework, licensing, accounts, migrations,
+  premium runtime or remote product feeds.
+- Preserve nfgeo_address, existing nfgeo option names and native global setting keys.
+  Bootstrap classes/constants are isolated from premium.
+- Free yields when premium's version constant is defined. Do not edit premium
+  without explicit authorization.
+- Only the dedicated Address field is supported. Native Ninja Address/component fields are deliberately outside this plugin.
+- Only four promotional editor links: Map, Directions, Distance & Duration,
+  Address Validation. They must never create fields or save unsupported values.
+- All dashboard content is local. No image placeholders or fabricated screenshots.
+- Run npm run build, npm test and tools/package/build.php. Include readable sources;
+  exclude tools, tests, dependencies and private docs from release ZIPs.
+- Fixtures do not replace installed/browser acceptance. Publishing, production
+  changes and WordPress.org submission require separate approval.

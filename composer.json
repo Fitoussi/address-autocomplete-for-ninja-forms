@@ -1,0 +1,36 @@
+{
+	"name": "oddlylogical/address-autocomplete-for-ninja-forms",
+	"type": "wordpress-plugin",
+	"description": "Standalone Address autocomplete for Ninja Forms",
+	"keywords": [
+		"wordpress",
+		"ninja",
+		"autocomplete",
+		"google-places"
+	],
+	"homepage": "https://ninjageolocation.com/",
+	"license": "GPL-3.0-or-later",
+	"support": {
+		"issues": "https://ninjageolocation.com/support"
+	},
+	"config": {
+		"github-protocols": [
+			"https"
+		],
+		"prepend-autoloader": false,
+		"platform": {
+			"php": "7.4.0"
+		}
+	},
+	"require": {
+		"php": ">=7.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"NinjaGeolocationAutocomplete\\": "src/"
+		}
+	},
+	"scripts": {
+		"test": "php tests/contracts.php"
+	}
+}

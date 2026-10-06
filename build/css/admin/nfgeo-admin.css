@@ -1,0 +1,26 @@
+.nfgeoac-multiple {
+  width: 100%;
+  min-height: 140px;
+}
+
+.nfgeoac-promotions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.nfgeoac-premium-field {
+  border: 1px dashed #b8c4d6;
+  border-radius: 4px;
+  padding: 12px 8px;
+  color: #596b80;
+  background: #f6f8fb;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nfgeoac-premium-field:hover, .nfgeoac-premium-field:focus {
+  border-color: #3855ed;
+  color: #3855ed;
+}
