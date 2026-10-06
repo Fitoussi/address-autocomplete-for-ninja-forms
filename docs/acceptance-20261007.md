@@ -59,7 +59,7 @@ Both adapters have an explicit regression proving that committing a suggestion d
 ## Package
 
 Filename: address-autocomplete-for-ninja-forms.1.0.0.zip
-SHA-256: eb008701275b62e6db96cafe7c40cc411c997bb43beaf6602dd07dcd737ca62b
+SHA-256: c2bcee72a216a193a17a059ea264be5860456ab700316dbf01f9245a51551f06
 
 Readable JS/SCSS and frontend sourcemaps ship with the compiled assets.
 Development tools, tests, docs, editor files, node_modules and vendor are excluded.

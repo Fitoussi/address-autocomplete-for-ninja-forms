@@ -44,7 +44,7 @@ async function fixture({duplicate = false, loading = false, failed = false} = {}
 	}}};
 	window.nfgeoAutocompleteForms = {7: {formId: 7, config: {disableGoogleApi: true}, fields: [
 		{id: 11, type: 'nfgeo_address', nfgeo_address_autocomplete: 1, nfgeo_force_autocomplete_selection: 1},
-		
+
 	]}};
 	window.eval(bundle);
 	await sleep(35);
