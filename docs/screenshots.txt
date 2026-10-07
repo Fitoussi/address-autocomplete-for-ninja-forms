@@ -2,14 +2,34 @@ SCREENSHOT ASSETS — Ninja Forms
 
 assets/screenshots/screenshot-1.png
 Live Google Places suggestions in the dedicated Ninja Forms Address field.
-Captured from this plugin's own isolated local QA form on 2026-10-07.
-The image retains Google attribution and contains no API key or private entry.
-The matching directory caption is in readme.txt.
+Owner-captured on 2026-10-07; selected and approved in chat.
+Source: /Users/Fitoussi/screenshots/Screenshot 2026-10-07 at 17.28.46.png
+Dimensions: 939 x 647 pixels.
+Retains Google attribution; no API key or private entry.
 
-For an approved WordPress.org release, copy this file to the separate top-level
-SVN assets/screenshot-1.png directory, outside trunk. This pass stages a duplicate
-in the local submission-prep artifact only; nothing has been uploaded.
+assets/screenshots/screenshot-2.png
+Native Ninja Forms builder showing the dedicated Address field and its autocomplete options.
+Owner-captured on 2026-10-07; selected and approved in chat.
+Source: /Users/Fitoussi/screenshots/Screenshot 2026-10-07 at 17.32.25.png
+Dimensions: 1500 x 1164 pixels.
 
-Additional editor/global-preference captures await a working dedicated signed-in
-screenshot browser and owner review. Do not add captions for absent files.
+assets/screenshots/screenshot-3.png
+Global Google browser API key, region and language preferences with the setup-guide link.
+Owner-captured on 2026-10-07; selected and approved in chat.
+Source: /Users/Fitoussi/screenshots/Screenshot 2026-10-07 at 17.33.29.png
+Dimensions: 1285 x 473 pixels.
+API key is the visible placeholder YOUR_GOOGLE_MAPS_API_KEY, not a credential.
+
+assets/screenshots/screenshot-4.png
+Plugin overview introducing the included standalone autocomplete integration.
+Owner-captured on 2026-10-07; selected and approved in chat.
+Source: /Users/Fitoussi/screenshots/Screenshot 2026-10-07 at 17.29.21.png
+Dimensions: 1376 x 377 pixels.
+
+All four images are copied unchanged; owner originals remain untouched.
+Matching WordPress.org captions are in readme.txt in the same numeric order.
+For an approved WordPress.org release, copy these to the separate top-level
+SVN assets/screenshot-N.png directory, outside trunk. Duplicates are staged
+in the local screenshot artifact only; nothing has been uploaded.
+Overview-page image placeholders remain hidden as previously requested.
 No banner or icon is included in this candidate.

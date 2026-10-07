@@ -104,6 +104,9 @@ Product, demo, documentation and pricing links open our websites only when click
 == Screenshots ==
 
 1. Live Google Places suggestions in the dedicated Ninja Forms Address field. Google attribution remains visible.
+2. Address Autocomplete field options in the Ninja Forms builder, including required suggestion selection, result types, countries, language and location bias.
+3. Global Google browser API key, region and language settings, with a link to the API setup guide.
+4. The plugin overview introduces the included standalone Address Autocomplete integration and links to its configuration.
 
 == Changelog ==
 
