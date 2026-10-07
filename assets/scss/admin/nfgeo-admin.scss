@@ -1,22 +1,62 @@
-// Page-scoped standalone builder controls; no framework stylesheet.
-.nfgeoac-multiple {
-	width: 100%;
-	min-height: 140px;
+// Scoped Ninja drawer styling retained from the premium Choices integration.
+.nf-setting:has(.nfgeoac-multiple) {
+	.choices {
+		margin: 4px 0 0;
+		padding-top: 0;
+		overflow: visible;
+		.choices__inner {
+			box-sizing: border-box;
+			background: none;
+			padding: 0;
+			border: 0;
+			border-radius: 0;
+		}
+		.choices__input {
+			background: #fff;
+			border: 1px solid rgba(48, 55, 62, 0.1);
+			font-size: 16px;
+			font-weight: 400;
+			height: 41px;
+			margin-top: 3px;
+			padding: 12px 12px 8px;
+			text-transform: none;
+			width: 100% !important;
+		}
+		.choices__list[aria-expanded] {
+			z-index: 99;
+			max-height: 240px;
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+			overscroll-behavior: contain;
+		}
+		.choices__list {
+			overscroll-behavior: contain;
+		}
+	}
 }
-.nfgeoac-promotions {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 8px;
-	padding: 12px 0;
+.nfgeoac-settings-notice-row > td {
+	padding: 12px 0 24px;
 }
-.nfgeoac-premium-field {
-	border: 1px dashed #b8c4d6;
+.nfgeoac-settings-notice {
+	box-sizing: border-box;
+	padding: 20px 24px;
+	border: 1px solid #d4e3f1;
+	border-left: 4px solid #1767a6;
 	border-radius: 4px;
-	padding: 12px 8px;
-	color: #596b80;
-	background: #f6f8fb;
-	text-align: center;
-	text-decoration: none;
-	cursor: pointer;
-	&:hover, &:focus { border-color: #3855ed; color: #3855ed; }
+	background: #f1f7fc;
+	color: #263c53;
+	h3 {
+		margin: 0 0 10px;
+		color: inherit;
+		font-size: 15px;
+	}
+	p {
+		margin: 0 0 14px;
+	}
+	.nfgeoac-settings-notice__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		padding-top: 16px;
+	}
 }

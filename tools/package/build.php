@@ -37,6 +37,8 @@ try {
 		'build/css/admin/nfgeo-admin.min.css',
 		'build/css/admin/nfgeo-product-dashboard.min.css',
 		'assets/css/address-autocomplete.css',
+		'assets/css/choices.css',
+		'assets/licenses/choices.txt',
 	);
 	foreach ( $required as $path ) {
 		if ( ! is_file( $root . '/' . $path ) ) {

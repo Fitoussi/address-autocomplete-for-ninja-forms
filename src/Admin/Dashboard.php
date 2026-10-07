@@ -44,9 +44,10 @@ final class Dashboard {
 	 * @return void
 	 */
 	public static function register() {
-		add_action( 'admin_menu', array( self::class, 'register_page' ), 30 );
-		add_action( 'admin_enqueue_scripts', array( self::class, 'enqueue' ) );
-		add_filter( 'plugin_action_links_' . NFGEOAC_BASENAME, array( self::class, 'add_action_link' ), 120 );
+		SetupNotice::register();
+		add_action( 'admin_menu', [ self::class, 'register_page' ], 30 );
+		add_action( 'admin_enqueue_scripts', [ self::class, 'enqueue' ] );
+		add_filter( 'plugin_action_links_' . NFGEOAC_BASENAME, [ self::class, 'add_action_link' ], 120 );
 	}
 
 	/**
@@ -59,9 +60,9 @@ final class Dashboard {
 	public static function register_page() {
 		$title = __( 'Address Autocomplete', 'address-autocomplete-for-ninja-forms' );
 		if ( class_exists( '\Ninja_Forms' ) ) {
-			self::$page_hook = add_submenu_page( 'ninja-forms', NFGEOAC_PLUGIN_NAME, $title, 'manage_options', self::PAGE_SLUG, array( self::class, 'render' ) );
+			self::$page_hook = add_submenu_page( 'ninja-forms', NFGEOAC_PLUGIN_NAME, $title, 'manage_options', self::PAGE_SLUG, [ self::class, 'render' ] );
 		} else {
-			self::$page_hook = add_options_page( NFGEOAC_PLUGIN_NAME, $title, 'manage_options', self::PAGE_SLUG, array( self::class, 'render' ) );
+			self::$page_hook = add_options_page( NFGEOAC_PLUGIN_NAME, $title, 'manage_options', self::PAGE_SLUG, [ self::class, 'render' ] );
 		}
 	}
 
@@ -73,11 +74,11 @@ final class Dashboard {
 	 * @return array
 	 */
 	public static function add_action_link( $links ) {
-		return array(
+		return [
 			'overview' => '<a href="' . esc_url( self::get_url() ) . '">' . esc_html__( 'Overview', 'address-autocomplete-for-ninja-forms' ) . '</a>',
 			'settings' => '<a href="' . esc_url( admin_url( 'admin.php?page=nf-settings#ninja_forms_metabox_nfgeo_geolocation_settings' ) ) . '">' . esc_html__( 'Settings', 'address-autocomplete-for-ninja-forms' ) . '</a>',
 			'docs'     => '<a href="' . esc_url( NFGEOAC_SITE_URL . '/docs/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Docs', 'address-autocomplete-for-ninja-forms' ) . '</a>',
-		) + $links;
+		] + $links;
 	}
 
 	/**
@@ -88,7 +89,7 @@ final class Dashboard {
 	 * @return string
 	 */
 	public static function get_url( $section = 'overview' ) {
-		$section = \in_array( $section, array( 'overview', 'comparison', 'help', 'products' ), true ) ? $section : 'overview';
+		$section = \in_array( $section, [ 'overview', 'comparison', 'help', 'products' ], true ) ? $section : 'overview';
 		return add_query_arg( 'section', $section, admin_url( 'admin.php?page=' . self::PAGE_SLUG ) );
 	}
 
@@ -104,8 +105,7 @@ final class Dashboard {
 		$is_dashboard = ! empty( self::$page_hook ) && self::$page_hook === $hook_suffix;
 		// Navigation context only; no submitted settings or mutation are read here.
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended
-		$page    = isset( $_GET['page'] ) && \is_string( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
-		$subview = isset( $_GET['subview'] ) && \is_string( $_GET['subview'] ) ? sanitize_key( wp_unslash( $_GET['subview'] ) ) : '';
+		$page = isset( $_GET['page'] ) && \is_string( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 		$is_settings = 'nf-settings' === $page;
 
@@ -116,7 +116,7 @@ final class Dashboard {
 		wp_enqueue_style(
 			'nfgeo-product-dashboard',
 			NFGEOAC_URL . 'build/css/admin/nfgeo-product-dashboard.min.css',
-			array(),
+			[],
 			NFGEOAC_VERSION
 		);
 	}
@@ -160,12 +160,12 @@ final class Dashboard {
 		// This GET value selects presentation only: there is no save/delete action.
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$requested = isset( $_GET['section'] ) && \is_string( $_GET['section'] ) ? sanitize_key( wp_unslash( $_GET['section'] ) ) : '';
-		$tabs      = array(
+		$tabs      = [
 			'overview'   => __( 'Overview', 'address-autocomplete-for-ninja-forms' ),
 			'comparison' => __( 'Compare Packages', 'address-autocomplete-for-ninja-forms' ),
 			'help'       => __( 'Help', 'address-autocomplete-for-ninja-forms' ),
 			'products'   => __( 'More Plugins', 'address-autocomplete-for-ninja-forms' ),
-		);
+		];
 
 		$version      = NFGEOAC_VERSION;
 		$section      = isset( $tabs[ $requested ] ) ? $requested : 'overview';
@@ -176,14 +176,15 @@ final class Dashboard {
 		$product_name = NFGEOAC_PLUGIN_NAME;
 		$package_name = NFGEOAC_PACKAGE_LABEL;
 		$features     = DashboardFeatures::get_features();
+		$overview_features = DashboardFeatures::order_for_overview( $features );
 		$included     = array_filter(
-			$features,
+			$overview_features,
 			static function ( $feature ) {
 				return $feature['included'];
 			}
 		);
 		$available    = array_filter(
-			$features,
+			$overview_features,
 			static function ( $feature ) {
 				return ! $feature['included'];
 			}
@@ -191,11 +192,11 @@ final class Dashboard {
 		$packages     = DashboardFeatures::get_packages();
 
 		$hero_title     = __( 'Less typing. Better addresses.', 'address-autocomplete-for-ninja-forms' );
-		$help_step      = __( 'Add our custom Address field and configure its Autocomplete options.', 'address-autocomplete-for-ninja-forms' );
-		$feature_groups = array(
+		$help_step      = __( 'Add the Address field from the Geolocation group and configure its Address Autocomplete options.', 'address-autocomplete-for-ninja-forms' );
+		$feature_groups = [
 			'included'  => $included,
 			'available' => $available,
-		);
+		];
 
 		require __DIR__ . '/views/dashboard.php';
 	}
@@ -207,37 +208,42 @@ final class Dashboard {
 	 * @return array[] Public product names, descriptions and website URLs.
 	 */
 	public static function get_products() {
-		return array(
-			array(
+		return [
+			[
 				'name'        => 'Ninja Geolocation',
 				'url'         => 'https://ninjageolocation.com/',
 				'description' => __( 'Maps, geocoding, dynamic fields, directions, nearby locations and more for Ninja Forms.', 'address-autocomplete-for-ninja-forms' ),
-			),
-			array(
+			],
+			[
 				'name'        => 'GEO my WP',
 				'url'         => 'https://geomywp.com/',
 				'description' => __( 'Build location-based searches and directories for your WordPress site.', 'address-autocomplete-for-ninja-forms' ),
-			),
-			array(
+			],
+			[
 				'name'        => 'Formidable Geolocation',
 				'url'         => 'https://formidablegeolocation.com/',
 				'description' => __( 'Add geolocation tools and connected location fields to Formidable Forms.', 'address-autocomplete-for-ninja-forms' ),
-			),
-			array(
-				'name'        => 'Geolocation for Ninja Forms',
-				'url'         => 'https://ninjageolocation.com/',
-				'description' => __( 'Bring address, map and location workflows to Ninja Forms.', 'address-autocomplete-for-ninja-forms' ),
-			),
-			array(
+			],
+			[
+				'name'        => 'Gravity Geolocation',
+				'url'         => 'https://gravitygeolocation.com/',
+				'description' => __( 'Maps, geocoding, dynamic fields, directions, nearby locations and more for Gravity Forms.', 'address-autocomplete-for-ninja-forms' ),
+			],
+			[
+				'name'        => 'Gravity Search',
+				'url'         => 'https://gravitygeolocation.com/solutions/gravity-search/',
+				'description' => __( 'Turn Gravity Forms entries into searchable directories, listings and customer portals—with field filters, proximity search, maps and flexible result layouts.', 'address-autocomplete-for-ninja-forms' ),
+			],
+			[
 				'name'        => 'WPForms Geolocation',
 				'url'         => 'https://wpgeoforms.com/',
 				'description' => __( 'Add address autocomplete, maps, coordinates and directions to WPForms.', 'address-autocomplete-for-ninja-forms' ),
-			),
-			array(
+			],
+			[
 				'name'        => 'WP Job Manager Geolocation',
 				'url'         => 'https://jobmanagergeolocation.com/',
 				'description' => __( 'Add proximity searches and interactive maps to your WP Job Manager job board.', 'address-autocomplete-for-ninja-forms' ),
-			),
-		);
+			],
+		];
 	}
 }

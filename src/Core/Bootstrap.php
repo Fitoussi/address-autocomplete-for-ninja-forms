@@ -7,16 +7,24 @@
  */
 
 namespace NinjaGeolocationAutocomplete\Core;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
  * Register the standalone integrations once per request.
+ *
+ * @since 1.0.0
  */
 final class Bootstrap {
+
 	/**
 	 * Register native field, settings, editor and render hooks.
+	 *
+	 * @return void
+	 *
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		new \NinjaGeolocationAutocomplete\Admin\Settings();

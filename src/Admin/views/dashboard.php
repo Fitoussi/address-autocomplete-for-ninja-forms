@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="wrap nfgeo-product-dashboard">
+<div class="wrap nfgeo-product-dashboard<?php echo 'overview' === $section ? ' nfgeo-product-dashboard--overview' : ''; ?>">
 	<header class="nfgeo-product-dashboard__header">
 		<div>
 			<p class="nfgeo-product-dashboard__eyebrow"><?php esc_html_e( 'For Ninja Forms', 'address-autocomplete-for-ninja-forms' ); ?></p>
@@ -80,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<h3><?php echo esc_html( $feature['title'] ); ?></h3>
 									<p><?php echo esc_html( $feature['description'] ); ?></p>
 									<p class="nfgeo-product-dashboard__note"><?php echo esc_html( $feature['details'] ); ?></p>
-									<?php if ( \in_array( $item_id, array( 'autocomplete', 'location-map', 'dynamic-fields', 'directions', 'nearby', 'validation', 'drawing', 'entry-maps', 'search' ), true ) ) : ?>
+									<?php if ( \in_array( $item_id, [ 'autocomplete', 'location-map', 'dynamic-fields', 'directions', 'nearby', 'validation', 'drawing', 'entry-maps', 'search' ], true ) ) : ?>
 										<figure class="nfgeo-product-dashboard__placeholder" data-screenshot="<?php echo esc_attr( $item_id ); ?>">
 											<?php // Editorial replacement target: our own local screenshot of this feature. ?>
 											<figcaption><?php echo esc_html( $feature['title'] ); ?><small><?php esc_html_e( 'Screenshot placeholder', 'address-autocomplete-for-ninja-forms' ); ?></small></figcaption>
@@ -90,8 +90,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 										<?php if ( $feature['included'] ) : ?>
 											<a href="<?php echo esc_url( $docs_url . $feature['doc'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Setup & documentation', 'address-autocomplete-for-ninja-forms' ); ?><span class="screen-reader-text"> — <?php echo esc_html( $feature['title'] ); ?></span></a>
 										<?php else : ?>
-											<p><?php echo esc_html( implode( ', ', array_intersect_key( $packages, array_flip( $feature['packages'] ) ) ) ); ?></p>
-											<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'View demos', 'address-autocomplete-for-ninja-forms' ); ?><span class="screen-reader-text"> — <?php echo esc_html( $feature['title'] ); ?></span></a>
+											<p><span class="dashicons dashicons-category" aria-hidden="true"></span><span><?php
+												/* translators: %s: Comma-separated package names that include this feature. */
+												echo esc_html( sprintf( __( 'Included in: %s', 'address-autocomplete-for-ninja-forms' ), implode( ', ', array_intersect_key( $packages, array_flip( $feature['packages'] ) ) ) ) );
+											?></span></p>
+											<?php $feature_demos = \NinjaGeolocationAutocomplete\Admin\DashboardFeatures::get_demo_links( $item_id ); ?>
+											<?php if ( $feature_demos ) : ?>
+												<div class="nfgeo-product-dashboard__demo-links">
+													<?php foreach ( $feature_demos as $feature_demo ) : ?>
+														<a href="<?php echo esc_url( $feature_demo['url'] ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $feature_demo['label'] ); ?><span class="screen-reader-text"> — <?php echo esc_html( $feature['title'] ); ?></span></a>
+													<?php endforeach; ?>
+												</div>
+											<?php endif; ?>
 										<?php endif; ?>
 									</div>
 								</article>
@@ -155,7 +165,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</tbody>
 						</table>
 					</div>
-					<p><?php esc_html_e( 'Google API usage and any required Ninja Forms or GEO my WP add-ons are separate. Included tools still need configuration; feature checks are not a license-status check.', 'address-autocomplete-for-ninja-forms' ); ?></p>
+					<p><?php esc_html_e( 'Google API usage and any required form-builder editions or add-ons are separate. Optional integrations may require other plugins. Feature checks show package contents, not setup or license status.', 'address-autocomplete-for-ninja-forms' ); ?></p>
 					<a class="button button-primary" href="<?php echo esc_url( $pricing_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'View packages & pricing', 'address-autocomplete-for-ninja-forms' ); ?></a>
 				</section>
 			<?php elseif ( 'products' === $section ) : ?>
@@ -177,18 +187,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<h2><?php esc_html_e( 'From installed to working', 'address-autocomplete-for-ninja-forms' ); ?></h2>
 					<ol>
 						<li><?php esc_html_e( 'Activate Ninja Forms and open this plugin’s native Settings screen.', 'address-autocomplete-for-ninja-forms' ); ?></li>
-						<li><?php esc_html_e( 'Configure the Google services and API keys your location features require; enable billing and appropriate key restrictions.', 'address-autocomplete-for-ninja-forms' ); ?></li>
+						<li><?php esc_html_e( 'Enter your Google browser API key. Enable Maps JavaScript API and Places API (New), configure billing, and restrict the key to your website.', 'address-autocomplete-for-ninja-forms' ); ?></li>
 						<li><?php echo esc_html( $help_step ); ?></li>
 						<li><?php esc_html_e( 'Save your form before previewing. Test the complete visitor flow.', 'address-autocomplete-for-ninja-forms' ); ?></li>
 					</ol>
 					<a class="button button-primary" href="<?php echo esc_url( $settings_url ); ?>"><?php esc_html_e( 'Open Settings', 'address-autocomplete-for-ninja-forms' ); ?></a>
-					<a class="button" href="<?php echo esc_url( $docs_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Google API setup guide', 'address-autocomplete-for-ninja-forms' ); ?></a>
+					<a class="button" href="<?php echo esc_url( $docs_url . 'create-google-maps-api-keys-ninja-forms/' ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Google API setup guide', 'address-autocomplete-for-ninja-forms' ); ?></a>
 				</section>
 				<section class="nfgeo-product-dashboard__card">
 					<h2><?php esc_html_e( 'Something not working?', 'address-autocomplete-for-ninja-forms' ); ?></h2>
 					<p><?php esc_html_e( 'Check that autocomplete is enabled, then verify the browser API key, required Google services, billing and key restrictions.', 'address-autocomplete-for-ninja-forms' ); ?></p>
-					<p><?php esc_html_e( 'Autocomplete fills an address after a visitor selects a suggestion. This free plugin does not provide current-location detection, manual geocoding or connected Dynamic fields.', 'address-autocomplete-for-ninja-forms' ); ?></p>
-					<p><?php esc_html_e( 'Include the package name, field type and steps to reproduce when asking for help. Never share API keys or license keys in a public post.', 'address-autocomplete-for-ninja-forms' ); ?></p>
+					<p><?php esc_html_e( 'Autocomplete fills an address after a visitor selects a suggestion. This free plugin does not provide current-location detection, manual geocoding or connected dynamic location fields.', 'address-autocomplete-for-ninja-forms' ); ?></p>
+					<p><?php esc_html_e( 'Include the plugin version, field type and steps to reproduce when asking for help. Never share API keys or other credentials in a public post.', 'address-autocomplete-for-ninja-forms' ); ?></p>
 					<div class="nfgeo-product-dashboard__actions">
 						<a class="button" href="<?php echo esc_url( $docs_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Browse documentation', 'address-autocomplete-for-ninja-forms' ); ?></a>
 						<a class="button" href="https://geomywp.com/support/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'View support options', 'address-autocomplete-for-ninja-forms' ); ?></a>

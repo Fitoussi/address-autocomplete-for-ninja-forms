@@ -33,7 +33,9 @@ Minimum declared host 3.13.2 and WordPress 6.5 were not installed and are not ce
 - Final installed ZIP: Plugin Check reports “Checks complete. No errors found.”
 - Repository PHP coding standards: zero errors and zero warnings.
 - PHP source contracts pass, including scalar input handling, persistence keys and runtime payload whitelisting.
-- 14 actual built-bundle DOM tests pass.
+- 15 actual built-bundle DOM tests pass (including native Choices persistence).
+- Native submission modal saved an edited QA address; native database read-back confirmed the change.
+- Retested saved US/IL restrictions, Cities results, Hebrew, proximity coordinates/radius and the custom selection message. Real Google returned Hebrew city suggestions.
 
 Automated frontend coverage: saved defaults, selection synchronization, blur rejection, valid retry,
 hidden conditional inputs, duplicate embeds, AJAX replacement, API-loading window, API failure,
@@ -52,14 +54,25 @@ Both adapters have an explicit regression proving that committing a suggestion d
 - Actual screenshots for these products; no Gravity screenshots relabeled, no placeholder images shipped.
 - Full installed-site minimum host/WordPress/PHP matrix.
 - Real host add-on conditional, multi-page and repeater flows. DOM fixtures cover relevant adapter behavior but do not certify every add-on.
-- Ninja live entry-edit save and native export/import round trip remain unverified; the native submission list was verified.
+- Native export/import round trip remains unverified.
+- Ninja's paid conditional/multipage/repeater extensions are not installed on the acceptance site. Live add-on flows are not certified; the adapter fixtures cover hidden/replaced inputs and nested definitions.
 - Language choices retain the existing reference list; not every listed Google language/result type was exercised.
 - GitHub publication and WordPress.org submission need separate approval.
 
 ## Package
 
 Filename: address-autocomplete-for-ninja-forms.1.0.0.zip
-SHA-256: c2bcee72a216a193a17a059ea264be5860456ab700316dbf01f9245a51551f06
+SHA-256: 6b36b0e17892c0881e00af718729b9f98939d70fbb6d2cb812c70e4a23440686
+
+Night cleanup: first-party PHP/JS/SCSS formatting and lifecycle documentation completed;
+unused editor localization and a dead dashboard variable removed. The empty tests/helpers
+directory was removed. Native field groups, unavailable-card mechanisms and saved keys are unchanged.
+Final ZIP contains 38 files, with no framework/account SDK, tools/tests/docs or installed dependencies.
+No commit, push or publication was performed during this cleanup.
+
+The second Formidable repeater rejection test stalled the in-app browser at its expected alert.
+The last installed-ZIP browser smoke could not be completed after that stall; final ZIP validation
+used Plugin Check, source contracts, bundle tests and native runtime checks instead.
 
 Readable JS/SCSS and frontend sourcemaps ship with the compiled assets.
 Development tools, tests, docs, editor files, node_modules and vendor are excluded.
@@ -68,7 +81,44 @@ The local package builder refuses to overwrite an existing ZIP.
 ## Test data and restoration
 
 Private evidence and the reversible database backup live outside the repository in
-artifacts/standalone-host-qa-20261006.6G91os. They contain local configuration and must not be published.
+artifacts/standalone-host-qa-20261006.6G91os and artifacts/autocomplete-night-audit-20261007.9mM2Gn.
+They contain local configuration and must not be published.
 Only disposable QA forms/entries were changed. Original activation and global-settings options are restored after testing.
 QA forms are Ninja 7 and Formidable 12; pages 347/348 are retained as drafts, with entries kept as review fixtures.
-The two new installed plugins are inactive after restoration. Premium and Gravity source repositories were not modified.
+The night audit added Ninja 8, Formidable 13 plus flow parent/child 14/15.
+Its pages 353/354/357 are also retained as drafts, and QA entries remain available for review.
+The temporary save diagnostic is removed from the test site after testing.
+The two new installed plugins were inactive after the night restoration. Premium and Gravity source repositories were not modified.
+
+## Daytime live-flow follow-up — completed
+
+This follow-up supersedes the older conditional/multipart and final browser-smoke gaps above.
+gmwdev: WordPress 7.2-alpha-63323, Ninja Forms 3.15.5, Conditional Logic 3.1,
+and Multi-Part 3.0.23. Both extensions were already active.
+
+- Native multipart QA form 65: hidden required Address permits Next; later-part
+  suggestions initialize; both selected addresses survive Next/Previous.
+- Conditional Address hide/show preserves its selection. Final AJAX submission
+  saves both page values (entry 17174), verified through the native model.
+- Ordinary conditional QA form 66: hidden required Address permits submission
+  (17175). Shown Address returns predictions; an unselected edit clears on blur
+  with an alert; valid retry saves the selected address (17176).
+- Rechecked both premium activation orders on Test Site 2: premium ownership and
+  no standalone callbacks, then standalone resumes after premium deactivation.
+  Field/settings/data-version fingerprints remain unchanged across four states.
+- Final installed ZIP browser smoke on Test Site 2: real Places suggestions and
+  native submission succeed, entry 363 saves the selected address exactly once.
+- Automated suites rerun: 15 JavaScript tests and PHP contracts pass. Installed
+  native regression also rechecks the earlier admin entry edit and saved options.
+
+No new runtime correction was needed. A Formidable native confirmation temporarily
+stalled browser controls; the owner dismissed it and remaining checks resumed.
+Ninja's repeatable-fieldset extension, minimum-version installed matrix and
+export/import remain outside this live follow-up; do not infer them from these passes.
+
+Per owner instruction, no daytime backup/restoration: both standalone plugins
+remain active on both sites, both premiums inactive, relevant Ninja extensions
+active on gmwdev. QA pages/forms/entries are retained locally; owner forms/settings
+were not changed. No commit, push, publication or submission.
+Detailed evidence: artifacts/standalone-flow-acceptance-20261007.Ty0zcg in the
+development workspace. It is private QA material, not release content.

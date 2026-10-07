@@ -1,8 +1,7 @@
 <?php
 /**
  * Plugin Name: Address Autocomplete for Ninja Forms
- * Plugin URI: https://ninjageolocation.com
- * Description: Modern Google Places autocomplete in a dedicated Ninja Forms Address field. Includes country and language controls, location bias and required suggestion selection. Requires Ninja Forms and your own Google API key.
+ * Description: Add modern Google Places suggestions to a dedicated Ninja Forms Address field. Free country, result-type and language controls, location bias and required suggestion selection. Requires Ninja Forms and your own Google API key.
  * Version: 1.0.0
  * Author: Eyal Fitoussi
  * Author URI: https://www.wpgeo.com
@@ -48,5 +47,8 @@ spl_autoload_register(
 	}
 );
 
+// Record first activation only; do not redirect or alter host settings.
+register_activation_hook( __FILE__, [ \NinjaGeolocationAutocomplete\Admin\SetupNotice::class, 'activate' ] );
+
 // Inspect all active plugin bootstraps before registering overlapping field types.
-add_action( 'plugins_loaded', array( NinjaGeolocationAutocomplete\Loader::class, 'load' ), 20 );
+add_action( 'plugins_loaded', [ NinjaGeolocationAutocomplete\Loader::class, 'load' ], 20 );
