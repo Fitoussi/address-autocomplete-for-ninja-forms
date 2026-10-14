@@ -8,7 +8,7 @@ $root = dirname( __DIR__ );
 $slug = basename( $root );
 $hosts = array(
  'address-autocomplete-for-gravity-forms' => array( 'GravityGeolocationAutocomplete', 'GFGEOAC', 'GFGEO', 'gform_pre_render' ),
- 'address-autocomplete-for-ninja-forms' => array( 'NinjaGeolocationAutocomplete', 'NFGEOAC', 'NFGEO', 'ninja_forms_register_fields' ),
+ 'wpgeo-address-autocomplete-for-ninja-forms' => array( 'NinjaGeolocationAutocomplete', 'NFGEOAC', 'NFGEO', 'ninja_forms_register_fields' ),
  'address-autocomplete-for-formidable-forms' => array( 'FormidableGeolocationAutocomplete', 'FRMGEOAC', 'FRMGEO', 'frm_get_field_type_class' ),
 );
 list( $namespace, $own, $premium, $runtime_hook ) = $hosts[ $slug ];

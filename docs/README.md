@@ -1,4 +1,4 @@
-# Address Autocomplete for Ninja Forms
+# WPGeo Address Autocomplete for Ninja Forms
 
 ## Standalone bootstrap convention
 
@@ -66,7 +66,9 @@ First-party JavaScript/SCSS formatting follows .prettierrc.json; vendor sources
 are excluded by .prettierignore. PHP follows tools/phpcs.xml.dist, matching the
 Gravity standalone conventions. Test-only host stubs are not shipped in ZIPs.
 Development quality tooling lives in tools/. Readable JS/SCSS and sourcemaps ship
-with the generated assets. npm run package creates a versioned, non-overwriting
+with the generated assets. Build scripts, package.json and package-lock.json stay
+in the public source repository and are excluded from installable ZIPs.
+npm run package creates a versioned, non-overwriting
 ZIP under dist/. Public metadata lives in readme.txt and change_log.txt.
 
 Global preferences preserve existing premium keys. Formidable merges only three

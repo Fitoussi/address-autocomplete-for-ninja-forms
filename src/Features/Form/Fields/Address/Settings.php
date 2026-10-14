@@ -32,7 +32,7 @@ final class Settings {
 		return [
 			'nfgeo_address_autocomplete'                 => 1,
 			'nfgeo_force_autocomplete_selection'         => 0,
-			'nfgeo_force_autocomplete_selection_message' => __( 'Please select an address from the suggested results.', 'address-autocomplete-for-ninja-forms' ),
+			'nfgeo_force_autocomplete_selection_message' => __( 'Please select an address from the suggested results.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			'nfgeo_address_autocomplete_types'           => [],
 			'nfgeo_address_autocomplete_country'         => [],
 			'nfgeo_address_autocomplete_language'        => '',
@@ -54,34 +54,34 @@ final class Settings {
 	 */
 	public static function get_settings() {
 		$labels  = [
-			'nfgeo_address_autocomplete'                 => __( 'Enable autocomplete', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_force_autocomplete_selection'         => __( 'Require address selection from suggestions', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_force_autocomplete_selection_message' => __( 'Selection alert message', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_address_autocomplete_types'           => __( 'Autocomplete result types', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_address_autocomplete_country'         => __( 'Restrict to countries', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_address_autocomplete_language'        => __( 'Language', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_restriction_usage'       => __( 'Location bias', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_proximity_lat'           => __( 'Latitude', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_proximity_lng'           => __( 'Longitude', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_proximity_radius'        => __( 'Radius (meters, up to 50,000)', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_bounds_sw_point'         => __( 'Southwest point (latitude, longitude)', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_bounds_ne_point'         => __( 'Northeast point (latitude, longitude)', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_address_autocomplete_strict_bounds'   => __( 'Restrict results to the bounds', 'address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete'                 => __( 'Enable autocomplete', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_force_autocomplete_selection'         => __( 'Require address selection from suggestions', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_force_autocomplete_selection_message' => __( 'Selection alert message', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete_types'           => __( 'Autocomplete result types', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete_country'         => __( 'Restrict to countries', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete_language'        => __( 'Language', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_restriction_usage'       => __( 'Location bias', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_proximity_lat'           => __( 'Latitude', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_proximity_lng'           => __( 'Longitude', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_proximity_radius'        => __( 'Radius (meters, up to 50,000)', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_bounds_sw_point'         => __( 'Southwest point (latitude, longitude)', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_bounds_ne_point'         => __( 'Northeast point (latitude, longitude)', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete_strict_bounds'   => __( 'Restrict results to the bounds', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 		];
 		$help = [
-			'nfgeo_address_autocomplete'                 => __( 'Show address suggestions powered by Google Places.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_force_autocomplete_selection'         => __( 'If the visitor leaves a newly typed address without selecting a suggestion, clear the input and show your configured alert.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_force_autocomplete_selection_message' => __( 'Show this alert when the visitor leaves a newly typed address without selecting an autocomplete suggestion.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_address_autocomplete_types'           => __( 'Choose up to 5 types of places to include in autocomplete suggestions. Leave empty to include all place types.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_address_autocomplete_country'         => __( 'Select up to 5 countries to limit address suggestions to those countries. Leave empty to allow all countries.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_address_autocomplete_language'        => __( 'Choose a language for suggestions and place details. Leave the default selected to use the global language setting.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_restriction_usage'       => __( 'Favor suggestions near a configured point or within a rectangular area. This does not detect the visitor’s location. Area bounds only exclude outside results when the bounds restriction is enabled.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_proximity_lat'           => __( 'Latitude of the center point used to favor nearby suggestions.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_proximity_lng'           => __( 'Longitude of the center point used to favor nearby suggestions.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_proximity_radius'        => __( 'Radius around the center point, in meters (up to 50,000). This favors nearby suggestions but does not exclude results outside the radius.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_bounds_sw_point'         => __( 'Enter the southwest corner as latitude, longitude, for example: 26.423277, -82.1371324.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_autocomplete_bounds_ne_point'         => __( 'Enter the northeast corner as latitude, longitude, for example: 26.4724595, -82.0217760.', 'address-autocomplete-for-ninja-forms' ),
-			'nfgeo_address_autocomplete_strict_bounds'   => __( 'Limit suggestions to the configured rectangular area instead of only favoring results within it. Applies when Location bias is set to Area bounds.', 'address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete'                 => __( 'Show address suggestions powered by Google Places.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_force_autocomplete_selection'         => __( 'If the visitor leaves a newly typed address without selecting a suggestion, clear the input and show your configured alert.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_force_autocomplete_selection_message' => __( 'Show this alert when the visitor leaves a newly typed address without selecting an autocomplete suggestion.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete_types'           => __( 'Choose up to 5 types of places to include in autocomplete suggestions. Leave empty to include all place types.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete_country'         => __( 'Select up to 5 countries to limit address suggestions to those countries. Leave empty to allow all countries.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete_language'        => __( 'Choose a language for suggestions and place details. Leave the default selected to use the global language setting.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_restriction_usage'       => __( 'Favor suggestions near a configured point or within a rectangular area. This does not detect the visitor’s location. Area bounds only exclude outside results when the bounds restriction is enabled.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_proximity_lat'           => __( 'Latitude of the center point used to favor nearby suggestions.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_proximity_lng'           => __( 'Longitude of the center point used to favor nearby suggestions.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_proximity_radius'        => __( 'Radius around the center point, in meters (up to 50,000). This favors nearby suggestions but does not exclude results outside the radius.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_bounds_sw_point'         => __( 'Enter the southwest corner as latitude, longitude, for example: 26.423277, -82.1371324.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_autocomplete_bounds_ne_point'         => __( 'Enter the northeast corner as latitude, longitude, for example: 26.4724595, -82.0217760.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+			'nfgeo_address_autocomplete_strict_bounds'   => __( 'Limit suggestions to the configured rectangular area instead of only favoring results within it. Applies when Location bias is set to Area bounds.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 		];
 		$selects = [
 			'nfgeo_address_autocomplete_language'  => ReferenceData::get_languages_as_options(),
@@ -89,15 +89,15 @@ final class Settings {
 			'nfgeo_address_autocomplete_country'   => ReferenceData::get_countries_as_options(),
 			'nfgeo_autocomplete_restriction_usage' => [
 				[
-					'label' => __( 'None', 'address-autocomplete-for-ninja-forms' ),
+					'label' => __( 'None', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 					'value' => '',
 				],
 				[
-					'label' => __( 'Proximity', 'address-autocomplete-for-ninja-forms' ),
+					'label' => __( 'Proximity', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 					'value' => 'proximity',
 				],
 				[
-					'label' => __( 'Area bounds', 'address-autocomplete-for-ninja-forms' ),
+					'label' => __( 'Area bounds', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 					'value' => 'area_bounds',
 				],
 			],
@@ -105,7 +105,7 @@ final class Settings {
 		$selects['nfgeo_address_autocomplete_language'] = array_merge(
 			[
 				[
-					'label' => __( 'Default (global language)', 'address-autocomplete-for-ninja-forms' ),
+					'label' => __( 'Default (global language)', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 					'value' => '',
 				],
 			],

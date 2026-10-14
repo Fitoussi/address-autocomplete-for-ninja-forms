@@ -72,7 +72,7 @@ class Field extends \NF_Fields_Textbox {
 	 */
 	public function __construct() {
 		parent::__construct();
-		$this->_nicename = __( 'Address', 'address-autocomplete-for-ninja-forms' );
+		$this->_nicename = __( 'Address', 'wpgeo-address-autocomplete-for-ninja-forms' );
 		$this->_settings = array_merge( $this->_settings, Settings::get_settings() );
 		add_filter( 'ninja_forms_register_fields', [ $this, 'register' ] );
 	}

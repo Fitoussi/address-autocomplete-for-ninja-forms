@@ -1,105 +1,112 @@
-=== Address Autocomplete for Ninja Forms ===
-Contributors: eyalfitoussi
+=== WPGeo Address Autocomplete for Ninja Forms ===
+Contributors: ninjew
 Tags: address autocomplete, ninja forms, google places, address, geolocation
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.0.0
-License: GPLv3 or later
+License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Google Places address suggestions for Ninja Forms, with country and language controls, location bias and required selection.
 
 == Description ==
 
-Less typing. More useful address suggestions.
+Add Google-powered address suggestions to Ninja Forms. Use the included single-line Address field to help visitors enter addresses with less typing.
 
-Address Autocomplete for Ninja Forms adds Google-powered address suggestions to your forms, with practical controls included free. Visitors start typing, choose a suggestion, and continue filling out the form.
+= Features =
 
-**An Address field built for Ninja Forms**
+* Dedicated single-line Address field in the native Ninja Forms builder.
+* Country restrictions: up to five countries per field.
+* Result types: regions, cities, street addresses or premises.
+* Per-field suggestion language.
+* Global language and region preferences.
+* Location bias by point and radius or rectangular bounds.
+* Optional restriction to rectangular bounds.
+* Required suggestion selection with a custom alert message.
+* Saves addresses through Ninja Forms' normal submission lifecycle.
 
-* Add a dedicated single-line Address field from the Geolocation field group.
-* Configure autocomplete in that field's own options, alongside the native builder's settings.
-* Save the selected address through Ninja Forms' normal field and submission lifecycle.
+= An Address field built for Ninja Forms =
 
-Only the dedicated single-line Address field is supported. This plugin does not connect Ninja Forms' separate street, city, state, ZIP or country fields.
+Add the Address field from the Geolocation field group and configure autocomplete in its field settings. The plugin collects a complete address in one input; it does not fill Ninja Forms' separate street, city, state, ZIP or country fields.
 
-**Useful controls, included free**
+= Customize suggestions =
 
-* **Countries:** limit suggestions to the countries relevant to your form.
-* **Result types:** request regions, cities, street addresses or premises.
-* **Language:** choose a language per field or use the global preference.
-* **Region:** set a site-wide region preference. Region influences results; country restrictions limit them.
-* **Location bias:** favor suggestions near coordinates or within geographic bounds, with optional strict bounds.
-* **Required suggestion selection:** clear unselected typed text when the visitor leaves the field and display your configurable alert.
+Choose countries, result types and language for each field. Prioritize suggestions near a point or within map bounds, or restrict results to those bounds. The global region preference influences results; country restrictions limit which countries can appear.
 
-Required selection is a browser-side form behavior, not postal validation, proof of a deliverable address or a server-side security check. Google controls the available suggestions.
+= Require a suggestion selection =
 
-**Modern Google Places by default**
+Optionally require visitors to choose an address suggestion. Manually typed, unselected text is cleared, and your custom alert prompts them to select a suggestion. This is not postal address validation or a deliverability guarantee.
 
-The default autocomplete path uses Google Places API (New), rather than the deprecated legacy AutocompleteService. A legacy compatibility fallback remains for compatible environments where the modern API is unavailable. The default modern path avoids that legacy service's deprecation warning; it does not guarantee every Google configuration is warning-free.
+= Google API requirements =
 
-**Focused and standalone**
+A Google Maps API key is required for address autocomplete to work. Follow [this tutorial](https://ninjageolocation.com/docs/create-google-maps-api-keys-ninja-forms/) to create your Google Maps API key.
 
-No WPGeo account, licensing SDK or WPGeo Framework is required. The dashboard, feature overview and package comparison are bundled locally. Your Google browser API key is still required, and Google's billing and usage limits apply separately.
+[Google Maps Platform terms](https://cloud.google.com/maps-platform/terms/) | [Google privacy policy](https://policies.google.com/privacy)
 
-Existing Address field types and supported settings retain the same saved identities as Ninja Geolocation. The free integration yields when the matching premium plugin is active. Premium is a separate plugin installation, not functionality unlocked inside this ZIP.
+= Need more than autocomplete? =
 
-**Need more than address autocomplete?**
+[Ninja Geolocation](https://ninjageolocation.com/) offers paid packages for interactive maps, geocoding, dynamic location fields, current-location detection, directions, distance calculations, address validation, nearby locations and drawing tools. Feature availability depends on the package.
 
-Explore [Ninja Geolocation](https://ninjageolocation.com/) for connected maps, geocoding, dynamic location fields, current-location detection, directions, distance, address validation, nearby locations and drawing tools.
+Ninja Geolocation is a separate plugin, not functionality unlocked inside this free plugin by entering a license.
 
-Features depend on the premium package. Use the included Compare Packages page to compare the options. Editor links for Map, Directions, Distance & Duration and Address Validation are informational only; premium functionality is not bundled in this free plugin.
+[Explore packages and pricing](https://ninjageolocation.com/pricing/) | [Try the live demos](https://demo.ninjageolocation.com/) | [Read the documentation](https://ninjageolocation.com/docs/)
 
 == Installation ==
 
 1. Install and activate Ninja Forms 3.13.2 or newer.
-2. Install and activate Address Autocomplete for Ninja Forms.
-3. Open Ninja Forms' settings and select Address Autocomplete.
-4. Enter your own Google browser API key. Enable Maps JavaScript API and Places API (New), configure billing, and restrict the key to your website.
+2. Install and activate WPGeo Address Autocomplete for Ninja Forms. Deactivate Ninja Geolocation first if you are switching to this free plugin.
+3. Open Ninja Forms > Settings and find the Address Autocomplete section.
+4. Enter your Google Maps API key with Maps JavaScript API and Places API (New) enabled.
 5. Set optional global region and language preferences.
-6. Add the Address field from Geolocation. Configure its options and save.
+6. Open your form in the Ninja Forms builder and add the Address field from the Geolocation group. Configure its options and save.
 7. Preview and test selecting suggestions and submitting the form.
+
+The overview is available under Ninja Forms > Address Autocomplete. If Ninja Forms is unavailable, it appears under Settings > Address Autocomplete instead.
 
 == Frequently Asked Questions ==
 
 = Are all the autocomplete controls included free? =
-Yes. The controls described above are included in this free plugin. Ninja Forms is required separately. Google usage and any paid host edition have separate terms and pricing.
+
+Yes. All autocomplete controls described above are included free. Ninja Forms and your own Google Maps API key are required.
 
 = Does this validate postal addresses or provide maps and directions? =
-No. Autocomplete helps visitors choose a Google suggestion, but does not verify postal deliverability or provide connected maps, directions or current-location detection. Those workflows belong to separate premium packages.
+
+No. Autocomplete helps visitors choose a Google suggestion, but does not verify postal deliverability or provide connected maps, directions or current-location detection. Ninja Geolocation offers those features in separate paid packages.
 
 = Can it fill Ninja Forms' separate address components? =
-Not in this version. Use the dedicated single-line Address field. Separate native address/component fields are not connected by this plugin.
+
+No. Use the included single-line Address field. This plugin does not fill Ninja Forms' separate street, city, state, ZIP or country fields.
 
 = What happens if someone types an address without selecting a suggestion? =
-With required suggestion selection enabled, the plugin clears that unselected typed text on leaving the field and displays your configured message. The visitor can retry and select a suggestion. Without that option, manually typed addresses are permitted. Host-required-field validation remains separate.
+
+If required suggestion selection is enabled, unselected text is cleared when the visitor leaves the field, and your custom message prompts them to select a suggestion. Without that option, manually typed addresses are allowed. Ninja Forms' Required setting still controls whether the field can be left empty.
 
 = What is the difference between region and country restriction? =
-The global region preference influences Google's results. A field's country restriction limits suggestions to the selected countries. Field language can override the global language.
+
+The global region preference influences Google's results. A field's country restriction limits suggestions to the selected countries. A field's language setting can override the global language.
 
 = Can I use it on AJAX or multi-page forms? =
-The adapter handles supported host form rendering and dynamic updates. Multi-page and conditional workflows depend on the corresponding Ninja Forms features/add-ons. Test your own form, theme and integrations before going live.
 
-= Can free and premium be active together? =
-Free stops registering its overlapping fields and hooks while the matching premium geolocation plugin is active. Deactivate free when using premium. Saved fields and settings are not deleted. This is not a conversion tool for premium-only fields left in a form after premium is removed.
+The plugin supports AJAX rendering and dynamically displayed Address fields. Multi-page and conditional forms require the corresponding Ninja Forms features or add-ons. Test your form, theme and integrations before going live.
 
-= Is a WPGeo account required? =
-No. The plugin does not include account connection, license activation, telemetry, a remote product catalog or plugin installation services.
+= Can I use this alongside Ninja Geolocation? =
+
+Deactivate this free plugin when switching to Ninja Geolocation. If both are active, the free plugin pauses and displays an administrator notice, regardless of plugin load order. Your saved Address fields and settings are not deleted. Fields that require Ninja Geolocation still need that plugin to work.
+
+= Is a plugin account or license required? =
+
+No WPGeo account or plugin license is required. You do need your own Google Cloud account and API key, as described above.
 
 = Can another integration load Google? =
-Developers can use the nfgeo_disable_google_maps_api filter to prevent this plugin from loading the API. Another integration must then supply a compatible Google Maps JavaScript API with Places. No Google API Loading switch is shown in the free settings interface.
 
-== External Services ==
+Yes. Developers can use the `nfgeo_disable_google_maps_api` filter to prevent this plugin from loading Google. Another integration must then load a compatible Google Maps JavaScript API with Places support. This is a developer filter, not a settings switch.
 
-Google Maps Platform supplies address suggestions and selected-place address details. A form with enabled autocomplete connects the visitor's browser to Google using your configured browser API key. The API loader sends the key and configured language/region. Suggestion and place-detail requests send the typed query or selected place identifier and configured countries, result types, language and geographic bias/restriction where applicable.
+= Where can developers find the source code? =
 
-Configure Google's APIs, billing and website key restrictions before use. Site owners are responsible for privacy notices or consent needed for their audience and deployment.
+Readable JavaScript and SCSS sources are included in the plugin. The full development project, build configuration and dependency lockfile are available on [GitHub](https://github.com/Fitoussi/address-autocomplete-for-ninja-forms). To rebuild assets, download the repository, install Node.js/npm, then run `npm ci` and `npm run build` (esbuild and Sass). These tools are not required to use the plugin.
 
-[Google Maps Platform Terms](https://cloud.google.com/maps-platform/terms/)
-[Google Privacy Policy](https://policies.google.com/privacy)
-
-Product, demo, documentation and pricing links open our websites only when clicked. Dashboard descriptions are bundled locally; these pages do not download remote catalogs or install plugins.
+Includes [Choices.js 11.1.0](https://github.com/Choices-js/Choices/tree/v11.1.0), MIT licensed; readable distribution: assets/js/editor/vendor/choices.js; license: assets/licenses/choices.txt.
 
 == Screenshots ==
 
@@ -111,8 +118,4 @@ Product, demo, documentation and pricing links open our websites only when click
 == Changelog ==
 
 = 1.0.0 =
-* Added a one-time administrator setup notice with permanent dismissal and no activation redirect.
-* Initial standalone address autocomplete integration for Ninja Forms.
-* Google Places API (New) by default, country/type/language controls, location bias and optional required suggestion selection.
-* Dedicated single-line Address field with native builder and submission integration.
-* Locally bundled overview, package comparison, help and product discovery pages.
+* Initial release.

@@ -8,7 +8,7 @@
 
     <arg name="extensions" value="php"/>
     <file>../src</file>
-    <file>../address-autocomplete-for-ninja-forms.php</file>
+    <file>../wpgeo-address-autocomplete-for-ninja-forms.php</file>
 
     <exclude-pattern>/vendor/*</exclude-pattern>
     <exclude-pattern>/node_modules/*</exclude-pattern>

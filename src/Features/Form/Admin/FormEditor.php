@@ -44,7 +44,7 @@ final class FormEditor {
 	public function sections( $sections ) {
 		$sections['nfgeo_geolocation'] = [
 			'id'         => 'nfgeo_geolocation',
-			'nicename'   => __( 'Geolocation', 'address-autocomplete-for-ninja-forms' ),
+			'nicename'   => __( 'Geolocation', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			'fieldTypes' => [],
 			'classes'    => 'nfgeo-geolocation',
 		];
@@ -74,10 +74,10 @@ final class FormEditor {
 	 */
 	public function available_fields( $fields ) {
 		$features = [
-			'nfgeo_map'                => [ __( 'Map', 'address-autocomplete-for-ninja-forms' ), __( 'Display connected locations on an interactive form map.', 'address-autocomplete-for-ninja-forms' ) ],
-			'nfgeo_directions'         => [ __( 'Directions', 'address-autocomplete-for-ninja-forms' ), __( 'Connect origin, destination and waypoints to display routes and directions.', 'address-autocomplete-for-ninja-forms' ) ],
-			'nfgeo_distance'           => [ __( 'Distance & Duration', 'address-autocomplete-for-ninja-forms' ), __( 'Calculate travel distance and estimated travel time between locations.', 'address-autocomplete-for-ninja-forms' ) ],
-			'nfgeo_address_validation' => [ __( 'Address Validation', 'address-autocomplete-for-ninja-forms' ), __( 'Validate and standardize addresses using Google Address Validation.', 'address-autocomplete-for-ninja-forms' ) ],
+			'nfgeo_map'                => [ __( 'Map', 'wpgeo-address-autocomplete-for-ninja-forms' ), __( 'Display connected locations on an interactive form map.', 'wpgeo-address-autocomplete-for-ninja-forms' ) ],
+			'nfgeo_directions'         => [ __( 'Directions', 'wpgeo-address-autocomplete-for-ninja-forms' ), __( 'Connect origin, destination and waypoints to display routes and directions.', 'wpgeo-address-autocomplete-for-ninja-forms' ) ],
+			'nfgeo_distance'           => [ __( 'Distance & Duration', 'wpgeo-address-autocomplete-for-ninja-forms' ), __( 'Calculate travel distance and estimated travel time between locations.', 'wpgeo-address-autocomplete-for-ninja-forms' ) ],
+			'nfgeo_address_validation' => [ __( 'Address Validation', 'wpgeo-address-autocomplete-for-ninja-forms' ), __( 'Validate and standardize addresses using Google Address Validation.', 'wpgeo-address-autocomplete-for-ninja-forms' ) ],
 		];
 		foreach ( $features as $name => $feature ) {
 			$fields[ $name ] = [
@@ -89,12 +89,12 @@ final class FormEditor {
 				'modal_content' => sprintf(
 					'<div class="available-action-modal"><h2>%1$s</h2><p>%2$s</p><p>%3$s</p><div class="actions"><a target="_blank" rel="noopener noreferrer" href="%4$s">%5$s</a><a href="%6$s" class="primary nf-button">%7$s</a></div></div>',
 					esc_html( $feature[0] ),
-					esc_html__( 'This field is available with Ninja Geolocation. Upgrade to use it in your forms.', 'address-autocomplete-for-ninja-forms' ),
+					esc_html__( 'This field is available with Ninja Geolocation. Upgrade to use it in your forms.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 					esc_html( $feature[1] ),
 					esc_url( NFGEOAC_SITE_URL . '/pricing/' ),
-					esc_html__( 'View packages', 'address-autocomplete-for-ninja-forms' ),
+					esc_html__( 'View packages', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 					esc_url( \NinjaGeolocationAutocomplete\Admin\Dashboard::get_url() ),
-					esc_html__( 'Explore features', 'address-autocomplete-for-ninja-forms' )
+					esc_html__( 'Explore features', 'wpgeo-address-autocomplete-for-ninja-forms' )
 				),
 			];
 		}
@@ -111,7 +111,7 @@ final class FormEditor {
 	public function groups( $groups ) {
 		$groups['nfgeo_geolocation'] = [
 			'id'       => 'nfgeo_geolocation',
-			'label'    => __( 'Address Autocomplete', 'address-autocomplete-for-ninja-forms' ),
+			'label'    => __( 'Address Autocomplete', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			'display'  => false,
 			'priority' => 650,
 		];
@@ -157,9 +157,9 @@ final class FormEditor {
 			'nfgeoac-form-editor',
 			'nfgeoAutocompleteEditor',
 			[
-				'allCountries' => __( 'All countries', 'address-autocomplete-for-ninja-forms' ),
-				'allTypes'     => __( 'All place types', 'address-autocomplete-for-ninja-forms' ),
-				'search'       => __( 'Search', 'address-autocomplete-for-ninja-forms' ),
+				'allCountries' => __( 'All countries', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'allTypes'     => __( 'All place types', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'search'       => __( 'Search', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			]
 		);
 	}

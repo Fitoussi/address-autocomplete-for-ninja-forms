@@ -58,7 +58,7 @@ function expect( $truth, $message ) {
 	if ( ! $truth ) {
 		throw new RuntimeException( $message ); }
 }
-require dirname( __DIR__ ) . '/address-autocomplete-for-ninja-forms.php';
+require dirname( __DIR__ ) . '/wpgeo-address-autocomplete-for-ninja-forms.php';
 expect( NFGEOAC_PACKAGE_TYPE === 'free', 'Package identity' );
 expect( ! defined( 'NFGEO_VERSION' ), 'Free must not define premium bootstrap constants' );
 NinjaGeolocationAutocomplete\Loader::load();

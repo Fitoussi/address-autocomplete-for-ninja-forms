@@ -12,17 +12,21 @@ if ( 'cli' !== PHP_SAPI ) {
 }
 
 $root = dirname( __DIR__, 2 );
-$slug = 'address-autocomplete-for-ninja-forms';
+$slug = 'wpgeo-address-autocomplete-for-ninja-forms';
+$entry_file = 'wpgeo-address-autocomplete-for-ninja-forms.php';
 
 try {
 	if ( ! class_exists( 'ZipArchive' ) ) {
 		throw new RuntimeException( 'Packaging requires the PHP zip extension.' );
 	}
-	$main = file_get_contents( $root . '/' . $slug . '.php' );
+	$main = file_get_contents( $root . '/' . $entry_file );
 	if ( ! preg_match( '/^ \* Version:\s*([0-9]+\.[0-9]+\.[0-9]+(?:[-.][A-Za-z0-9.-]+)?)\s*$/m', $main, $match ) ) {
 		throw new RuntimeException( 'Cannot read the plugin header version.' );
 	}
 	$version = $match[1];
+	if ( ! preg_match( '/^ \* Text Domain:\s*' . preg_quote( $slug, '/' ) . '\s*$/m', $main ) ) {
+		throw new RuntimeException( 'The text domain must match the WordPress.org release slug.' );
+	}
 	if ( false === strpos( $main, "define( 'NFGEOAC_VERSION', '{$version}' );" ) || false === strpos( $main, "define( 'NFGEOAC_PACKAGE_TYPE', 'free' );" ) ) {
 		throw new RuntimeException( 'Plugin constants do not match the standalone header.' );
 	}
@@ -46,7 +50,7 @@ try {
 		}
 	}
 
-	$paths      = array( $slug . '.php', 'readme.txt', 'change_log.txt', 'src', 'assets', 'build', 'languages', 'build.js', 'package.json', 'package-lock.json' );
+	$paths      = array( $entry_file, 'readme.txt', 'change_log.txt', 'src', 'assets', 'build', 'languages' );
 	$files      = array();
 	$extensions = array( 'php', 'js', 'css', 'scss', 'svg', 'png', 'jpg', 'jpeg', 'webp', 'gif', 'json', 'map', 'txt', 'po', 'mo', 'pot' );
 	foreach ( $paths as $path ) {

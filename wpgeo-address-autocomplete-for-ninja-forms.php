@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Address Autocomplete for Ninja Forms
+ * Plugin Name: WPGeo Address Autocomplete for Ninja Forms
  * Description: Add modern Google Places suggestions to a dedicated Ninja Forms Address field. Free country, result-type and language controls, location bias and required suggestion selection. Requires Ninja Forms and your own Google API key.
  * Version: 1.0.0
  * Author: Eyal Fitoussi
@@ -8,7 +8,7 @@
  * Requires at least: 6.5
  * Requires PHP: 7.4
  * Requires Plugins: ninja-forms
- * Text Domain: address-autocomplete-for-ninja-forms
+ * Text Domain: wpgeo-address-autocomplete-for-ninja-forms
  * Domain Path: /languages/
  * License: GPL-3.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -26,7 +26,7 @@ define( 'NFGEOAC_VERSION', '1.0.0' );
 define( 'NFGEOAC_PLUGIN_FILE', __FILE__ );
 define( 'NFGEOAC_BASENAME', plugin_basename( __FILE__ ) );
 define( 'NFGEOAC_PREFIX', 'nfgeo' );
-define( 'NFGEOAC_PLUGIN_NAME', 'Address Autocomplete for Ninja Forms' );
+define( 'NFGEOAC_PLUGIN_NAME', 'WPGeo Address Autocomplete for Ninja Forms' );
 define( 'NFGEOAC_PATH', plugin_dir_path( __FILE__ ) );
 define( 'NFGEOAC_URL', plugin_dir_url( __FILE__ ) );
 define( 'NFGEOAC_PACKAGE_TYPE', 'free' );

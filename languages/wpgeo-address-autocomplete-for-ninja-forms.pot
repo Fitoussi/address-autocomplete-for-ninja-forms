@@ -1,0 +1,804 @@
+# Copyright (C) 2026 Eyal Fitoussi
+# This file is distributed under the GPL-3.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WPGeo Address Autocomplete for Ninja Forms 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpgeo-address-autocomplete-for-ninja-forms\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-13T12:47:59+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wpgeo-address-autocomplete-for-ninja-forms\n"
+
+#. Plugin Name of the plugin
+#: wpgeo-address-autocomplete-for-ninja-forms.php
+msgid "WPGeo Address Autocomplete for Ninja Forms"
+msgstr ""
+
+#. Description of the plugin
+#: wpgeo-address-autocomplete-for-ninja-forms.php
+msgid "Add modern Google Places suggestions to a dedicated Ninja Forms Address field. Free country, result-type and language controls, location bias and required suggestion selection. Requires Ninja Forms and your own Google API key."
+msgstr ""
+
+#. Author of the plugin
+#: wpgeo-address-autocomplete-for-ninja-forms.php
+msgid "Eyal Fitoussi"
+msgstr ""
+
+#. Author URI of the plugin
+#: wpgeo-address-autocomplete-for-ninja-forms.php
+msgid "https://www.wpgeo.com"
+msgstr ""
+
+#: src/Admin/Dashboard.php:61
+#: src/Admin/Settings.php:44
+#: src/Features/Form/Admin/FormEditor.php:114
+msgid "Address Autocomplete"
+msgstr ""
+
+#: src/Admin/Dashboard.php:78
+#: src/Admin/Dashboard.php:164
+msgid "Overview"
+msgstr ""
+
+#: src/Admin/Dashboard.php:79
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/Dashboard.php:80
+msgid "Docs"
+msgstr ""
+
+#: src/Admin/Dashboard.php:135
+msgid "Explore maps, current-location detection, dynamic fields, directions, nearby locations, and more with Ninja Geolocation."
+msgstr ""
+
+#: src/Admin/Dashboard.php:139
+#: src/Admin/Settings.php:62
+#: src/Features/Form/Admin/FormEditor.php:97
+msgid "Explore features"
+msgstr ""
+
+#: src/Admin/Dashboard.php:141
+#: src/Admin/Settings.php:62
+#: src/Features/Form/Admin/FormEditor.php:95
+msgid "View packages"
+msgstr ""
+
+#: src/Admin/Dashboard.php:165
+msgid "Compare Packages"
+msgstr ""
+
+#: src/Admin/Dashboard.php:166
+msgid "Help"
+msgstr ""
+
+#: src/Admin/Dashboard.php:167
+msgid "More Plugins"
+msgstr ""
+
+#: src/Admin/Dashboard.php:194
+msgid "Less typing. Better addresses."
+msgstr ""
+
+#: src/Admin/Dashboard.php:195
+msgid "Add the Address field from the Geolocation group and configure its Address Autocomplete options."
+msgstr ""
+
+#: src/Admin/Dashboard.php:215
+msgid "Maps, geocoding, dynamic fields, directions, nearby locations and more for Ninja Forms."
+msgstr ""
+
+#: src/Admin/Dashboard.php:220
+msgid "Build location-based searches and directories for your WordPress site."
+msgstr ""
+
+#: src/Admin/Dashboard.php:225
+msgid "Add geolocation tools and connected location fields to Formidable Forms."
+msgstr ""
+
+#: src/Admin/Dashboard.php:230
+msgid "Maps, geocoding, dynamic fields, directions, nearby locations and more for Gravity Forms."
+msgstr ""
+
+#: src/Admin/Dashboard.php:235
+msgid "Turn Gravity Forms entries into searchable directories, listings and customer portals—with field filters, proximity search, maps and flexible result layouts."
+msgstr ""
+
+#: src/Admin/Dashboard.php:240
+msgid "Add address autocomplete, maps, coordinates and directions to WPForms."
+msgstr ""
+
+#: src/Admin/Dashboard.php:245
+msgid "Add proximity searches and interactive maps to your WP Job Manager job board."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:72
+#: src/Admin/DashboardFeatures.php:75
+#: src/Admin/DashboardFeatures.php:78
+#: src/Admin/DashboardFeatures.php:81
+#: src/Admin/DashboardFeatures.php:84
+#: src/Admin/DashboardFeatures.php:87
+#: src/Admin/DashboardFeatures.php:90
+#: src/Admin/DashboardFeatures.php:93
+#: src/Admin/DashboardFeatures.php:100
+#: src/Admin/DashboardFeatures.php:103
+#: src/Admin/DashboardFeatures.php:106
+msgid "View demo"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:96
+msgid "View single-entry demo"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:97
+msgid "View mashup demo"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:120
+msgid "Free"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:121
+msgid "Starter"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:122
+msgid "Pro"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:123
+msgid "Agency"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:136
+msgid "Address autocomplete"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:137
+msgid "Google Places API (New) in a dedicated single-line Address field."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:138
+msgid "Countries, place types, per-field language, location bias, global region and language, and required suggestion selection."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:145
+msgid "Interactive form maps"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:146
+msgid "Show connected locations and let visitors refine them with a draggable marker."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:147
+msgid "Customize map appearance, zoom, default location and marker behavior."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:154
+msgid "Geocoder & complete location data"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:155
+msgid "Store formatted addresses, coordinates and individual location components."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:156
+msgid "Connect addresses, maps and ordinary fields to shared geocoding results."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:163
+msgid "Dynamic location fields"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:164
+msgid "Populate city, region, postal code, coordinates and other location values."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:165
+msgid "Use connected values in native fields and your form workflows."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:172
+msgid "Current-location detection"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:173
+msgid "Offer a locator button or detect a location when the form loads."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:174
+msgid "Browser location requires visitor permission; optional IP location needs a provider."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:181
+msgid "Coordinate inputs"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:182
+msgid "Collect latitude and longitude directly."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:183
+msgid "A dedicated input for workflows where an address is not the starting point."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:190
+msgid "Standalone Locator & Reset fields"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:191
+msgid "Place current-location and reset buttons where they fit your form."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:192
+msgid "Separate controls complement the locator inside premium Address fields."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:199
+msgid "Directions & route displays"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:200
+msgid "Connect an origin, destination and waypoints, and display route details."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:201
+msgid "Route maps, summaries and turn-by-turn directions with connected fields."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:208
+msgid "Distance & travel time"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:209
+msgid "Calculate travel distance and duration or straight-line distance."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:210
+msgid "Use readable results or numeric distance and duration in form calculations."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:217
+msgid "Address validation"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:218
+msgid "Compare addresses with Google Address Validation recommendations."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:219
+msgid "Review corrections and validation results. Requires the Address Validation API."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:226
+msgid "Saved-entry maps"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:227
+msgid "Display a saved location on its own map or multiple locations together."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:228
+msgid "Single-entry and mashup map shortcodes outside your form."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:235
+msgid "Nearby locations & result panels"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:236
+msgid "Find destinations near a visitor and display selectable results."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:237
+msgid "Configure destination sources and results with an optional map."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:244
+msgid "Drawing Tools & Drawing Shape"
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:245
+msgid "Draw markers, lines, polygons, rectangles, circles and freehand shapes."
+msgstr ""
+
+#: src/Admin/DashboardFeatures.php:246
+msgid "Collect shapes and geometry outputs on a connected map."
+msgstr ""
+
+#: src/Admin/Settings.php:62
+msgid "Need more than address autocomplete?"
+msgstr ""
+
+#: src/Admin/Settings.php:62
+msgid "Explore connected maps, current-location detection, dynamic fields, directions, distance and more with Ninja Geolocation."
+msgstr ""
+
+#: src/Admin/Settings.php:67
+msgid "Google Browser API Key"
+msgstr ""
+
+#: src/Admin/Settings.php:68
+msgid "For this free plugin, enable Maps JavaScript API and Places API (New) for your browser key. No server key is required."
+msgstr ""
+
+#: src/Admin/Settings.php:68
+msgid "Need help?"
+msgstr ""
+
+#: src/Admin/Settings.php:68
+msgid "View the Google API setup guide"
+msgstr ""
+
+#: src/Admin/Settings.php:73
+msgid "Region Code"
+msgstr ""
+
+#: src/Admin/Settings.php:74
+msgid "A two-letter region code such as US. Use field settings to restrict suggestions to specific countries."
+msgstr ""
+
+#: src/Admin/Settings.php:79
+#: src/Features/Form/Fields/Address/Settings.php:62
+msgid "Language"
+msgstr ""
+
+#: src/Admin/Settings.php:80
+msgid "A language code such as en. Individual Address fields can override it."
+msgstr ""
+
+#. translators: %s: Plugin name.
+#: src/Admin/SetupNotice.php:92
+#, php-format
+msgid "%s is ready to configure."
+msgstr ""
+
+#: src/Admin/SetupNotice.php:97
+msgid "Add your Google API key, then enable autocomplete in your form's field options."
+msgstr ""
+
+#: src/Admin/SetupNotice.php:100
+msgid "Set up autocomplete"
+msgstr ""
+
+#: src/Admin/SetupNotice.php:101
+msgid "View plugin overview"
+msgstr ""
+
+#: src/Admin/SetupNotice.php:105
+msgid "Dismiss"
+msgstr ""
+
+#: src/Admin/SetupNotice.php:131
+msgid "You do not have permission to dismiss this notice."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:22
+msgid "For Ninja Forms"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:27
+msgid "Explore Plugins"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:28
+#: src/Admin/views/dashboard.php:194
+msgid "Open Settings"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:29
+msgid "View Live Demos"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:33
+msgid "Product overview sections"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:43
+msgid "Your installed package"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:45
+msgid "Modern Google Places autocomplete, included free. Collect addresses with a dedicated single-line field, tailor suggestions to your audience, and require a selection when it matters."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:47
+msgid "Explore my features"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:51
+msgid "See what else is available"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:53
+msgid "Location tools require your own Google API configuration. Google service usage and billing are separate."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:56
+msgid "Installed package"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:58
+msgid "Badges identify included tools. Follow their setup guides to put them to work."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:59
+msgid "Configuration & settings"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:70
+#: src/Admin/views/dashboard.php:78
+msgid "Included in your package"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:70
+msgid "Take your forms further"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:71
+msgid "Your available building blocks. Choose a tool and open its guide."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:71
+msgid "Other Ninja packages add these capabilities. Explore the demos or compare packages to find the right fit."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:78
+msgid "Available in other packages"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:86
+msgid "Screenshot placeholder"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:91
+msgid "Setup & documentation"
+msgstr ""
+
+#. translators: %s: Comma-separated package names that include this feature.
+#: src/Admin/views/dashboard.php:95
+#, php-format
+msgid "Included in: %s"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:114
+msgid "Choose the tools your next project needs"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:115
+msgid "Starter adds connected location tools. Pro adds directions, distance, validation and entry maps. Agency also includes nearby locations and drawing tools."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:116
+#: src/Admin/views/dashboard.php:169
+msgid "View packages & pricing"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:121
+msgid "Find the right package for your project"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:122
+msgid "Your installed package is highlighted. Packages are alternative builds, not add-ons to stack together; site allowances and license status are separate from the feature list."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:123
+msgid "On narrow screens, scroll the comparison horizontally to see every package."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:124
+msgid "Feature comparison — scroll to see all columns"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:126
+msgid "Ninja package feature comparison"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:129
+msgid "Feature"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:134
+msgid "Installed"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:148
+msgid "Included"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:148
+msgid "Not included"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:168
+msgid "Google API usage and any required form-builder editions or add-ons are separate. Optional integrations may require other plugins. Feature checks show package contents, not setup or license status."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:173
+msgid "More tools for your WordPress site"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:174
+msgid "Explore our other plugins. These descriptions are bundled locally; nothing is downloaded or installed from this page."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:181
+msgid "Learn more"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:187
+msgid "From installed to working"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:189
+msgid "Activate Ninja Forms and open this plugin’s native Settings screen."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:190
+msgid "Enter your Google browser API key. Enable Maps JavaScript API and Places API (New), configure billing, and restrict the key to your website."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:192
+msgid "Save your form before previewing. Test the complete visitor flow."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:195
+msgid "Google API setup guide"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:198
+msgid "Something not working?"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:199
+msgid "Check that autocomplete is enabled, then verify the browser API key, required Google services, billing and key restrictions."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:200
+msgid "Autocomplete fills an address after a visitor selects a suggestion. This free plugin does not provide current-location detection, manual geocoding or connected dynamic location fields."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:201
+msgid "Include the plugin version, field type and steps to reproduce when asking for help. Never share API keys or other credentials in a public post."
+msgstr ""
+
+#: src/Admin/views/dashboard.php:203
+msgid "Browse documentation"
+msgstr ""
+
+#: src/Admin/views/dashboard.php:204
+msgid "View support options"
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:47
+msgid "Geolocation"
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:77
+msgid "Map"
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:77
+msgid "Display connected locations on an interactive form map."
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:78
+msgid "Directions"
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:78
+msgid "Connect origin, destination and waypoints to display routes and directions."
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:79
+msgid "Distance & Duration"
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:79
+msgid "Calculate travel distance and estimated travel time between locations."
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:80
+msgid "Address Validation"
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:80
+msgid "Validate and standardize addresses using Google Address Validation."
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:92
+msgid "This field is available with Ninja Geolocation. Upgrade to use it in your forms."
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:160
+msgid "All countries"
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:161
+msgid "All place types"
+msgstr ""
+
+#: src/Features/Form/Admin/FormEditor.php:162
+msgid "Search"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Field.php:75
+msgid "Address"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:35
+msgid "Please select an address from the suggested results."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:57
+msgid "Enable autocomplete"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:58
+msgid "Require address selection from suggestions"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:59
+msgid "Selection alert message"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:60
+msgid "Autocomplete result types"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:61
+msgid "Restrict to countries"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:63
+msgid "Location bias"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:64
+msgid "Latitude"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:65
+msgid "Longitude"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:66
+msgid "Radius (meters, up to 50,000)"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:67
+msgid "Southwest point (latitude, longitude)"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:68
+msgid "Northeast point (latitude, longitude)"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:69
+msgid "Restrict results to the bounds"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:72
+msgid "Show address suggestions powered by Google Places."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:73
+msgid "If the visitor leaves a newly typed address without selecting a suggestion, clear the input and show your configured alert."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:74
+msgid "Show this alert when the visitor leaves a newly typed address without selecting an autocomplete suggestion."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:75
+msgid "Choose up to 5 types of places to include in autocomplete suggestions. Leave empty to include all place types."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:76
+msgid "Select up to 5 countries to limit address suggestions to those countries. Leave empty to allow all countries."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:77
+msgid "Choose a language for suggestions and place details. Leave the default selected to use the global language setting."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:78
+msgid "Favor suggestions near a configured point or within a rectangular area. This does not detect the visitor’s location. Area bounds only exclude outside results when the bounds restriction is enabled."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:79
+msgid "Latitude of the center point used to favor nearby suggestions."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:80
+msgid "Longitude of the center point used to favor nearby suggestions."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:81
+msgid "Radius around the center point, in meters (up to 50,000). This favors nearby suggestions but does not exclude results outside the radius."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:82
+msgid "Enter the southwest corner as latitude, longitude, for example: 26.423277, -82.1371324."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:83
+msgid "Enter the northeast corner as latitude, longitude, for example: 26.4724595, -82.0217760."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:84
+msgid "Limit suggestions to the configured rectangular area instead of only favoring results within it. Applies when Location bias is set to Area bounds."
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:92
+msgid "None"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:96
+msgid "Proximity"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:100
+msgid "Area bounds"
+msgstr ""
+
+#: src/Features/Form/Fields/Address/Settings.php:108
+msgid "Default (global language)"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:495
+msgid "Regions"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:496
+msgid "Cities"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:497
+msgid "Street addresses"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:498
+msgid "Premises"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:499
+msgid "Postal codes"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:500
+msgid "Restaurants"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:501
+msgid "Lodging"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:502
+msgid "Stores"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:503
+msgid "Schools"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:504
+msgid "Hospitals"
+msgstr ""
+
+#: src/Helpers/ReferenceData.php:505
+msgid "Airports"
+msgstr ""
+
+#: src/Loader.php:65
+msgid "Address Autocomplete for Ninja Forms is not running because Ninja Geolocation is active. Deactivate the free plugin; your existing Address fields and settings remain available in premium."
+msgstr ""
+
+#: src/Loader.php:77
+msgid "Address Autocomplete requires Ninja Forms 3.13.2 or newer."
+msgstr ""

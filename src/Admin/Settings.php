@@ -41,7 +41,7 @@ final class Settings {
 	public function groups( $groups ) {
 		$groups['nfgeo_geolocation'] = [
 			'id'    => 'nfgeo_geolocation',
-			'label' => __( 'Address Autocomplete', 'address-autocomplete-for-ninja-forms' ),
+			'label' => __( 'Address Autocomplete', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 		];
 		return $groups;
 	}
@@ -59,25 +59,25 @@ final class Settings {
 				'id'    => 'nfgeoac_overview',
 				'type'  => 'html',
 				'label' => '',
-				'html'  => '<div class="nfgeoac-settings-notice"><h3>' . esc_html__( 'Need more than address autocomplete?', 'address-autocomplete-for-ninja-forms' ) . '</h3><p>' . esc_html__( 'Explore connected maps, current-location detection, dynamic fields, directions, distance and more with Ninja Geolocation.', 'address-autocomplete-for-ninja-forms' ) . '</p><div class="nfgeoac-settings-notice__actions"><a class="button button-primary" href="' . esc_url( Dashboard::get_url() ) . '">' . esc_html__( 'Explore features', 'address-autocomplete-for-ninja-forms' ) . '</a><a class="button" href="' . esc_url( NFGEOAC_SITE_URL . '/pricing/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'View packages', 'address-autocomplete-for-ninja-forms' ) . '</a></div></div>',
+				'html'  => '<div class="nfgeoac-settings-notice"><h3>' . esc_html__( 'Need more than address autocomplete?', 'wpgeo-address-autocomplete-for-ninja-forms' ) . '</h3><p>' . esc_html__( 'Explore connected maps, current-location detection, dynamic fields, directions, distance and more with Ninja Geolocation.', 'wpgeo-address-autocomplete-for-ninja-forms' ) . '</p><div class="nfgeoac-settings-notice__actions"><a class="button button-primary" href="' . esc_url( Dashboard::get_url() ) . '">' . esc_html__( 'Explore features', 'wpgeo-address-autocomplete-for-ninja-forms' ) . '</a><a class="button" href="' . esc_url( NFGEOAC_SITE_URL . '/pricing/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'View packages', 'wpgeo-address-autocomplete-for-ninja-forms' ) . '</a></div></div>',
 			],
 			'nfgeo_google_maps_browser_api_key' => [
 				'id'    => 'nfgeo_google_maps_browser_api_key',
 				'type'  => 'textbox',
-				'label' => __( 'Google Browser API Key', 'address-autocomplete-for-ninja-forms' ),
-				'desc'  => esc_html__( 'For this free plugin, enable Maps JavaScript API and Places API (New) for your browser key. No server key is required.', 'address-autocomplete-for-ninja-forms' ) . '<br>' . esc_html__( 'Need help?', 'address-autocomplete-for-ninja-forms' ) . ' <a href="' . esc_url( NFGEOAC_SITE_URL . '/docs/create-google-maps-api-keys-ninja-forms/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'View the Google API setup guide', 'address-autocomplete-for-ninja-forms' ) . '</a>',
+				'label' => __( 'Google Browser API Key', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'desc'  => esc_html__( 'For this free plugin, enable Maps JavaScript API and Places API (New) for your browser key. No server key is required.', 'wpgeo-address-autocomplete-for-ninja-forms' ) . '<br>' . esc_html__( 'Need help?', 'wpgeo-address-autocomplete-for-ninja-forms' ) . ' <a href="' . esc_url( NFGEOAC_SITE_URL . '/docs/create-google-maps-api-keys-ninja-forms/' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'View the Google API setup guide', 'wpgeo-address-autocomplete-for-ninja-forms' ) . '</a>',
 			],
 			'nfgeo_google_maps_country'         => [
 				'id'    => 'nfgeo_google_maps_country',
 				'type'  => 'textbox',
-				'label' => __( 'Region Code', 'address-autocomplete-for-ninja-forms' ),
-				'desc'  => __( 'A two-letter region code such as US. Use field settings to restrict suggestions to specific countries.', 'address-autocomplete-for-ninja-forms' ),
+				'label' => __( 'Region Code', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'desc'  => __( 'A two-letter region code such as US. Use field settings to restrict suggestions to specific countries.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			],
 			'nfgeo_google_maps_language'        => [
 				'id'    => 'nfgeo_google_maps_language',
 				'type'  => 'textbox',
-				'label' => __( 'Language', 'address-autocomplete-for-ninja-forms' ),
-				'desc'  => __( 'A language code such as en. Individual Address fields can override it.', 'address-autocomplete-for-ninja-forms' ),
+				'label' => __( 'Language', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'desc'  => __( 'A language code such as en. Individual Address fields can override it.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			],
 		];
 		return $settings;

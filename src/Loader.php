@@ -62,7 +62,7 @@ final class Loader {
 	 */
 	public static function conflict_notice() {
 		if ( current_user_can( 'activate_plugins' ) ) {
-			echo '<div class="notice notice-warning"><p>' . esc_html__( 'Address Autocomplete for Ninja Forms is not running because Ninja Geolocation is active. Deactivate the free plugin; your existing Address fields and settings remain available in premium.', 'address-autocomplete-for-ninja-forms' ) . '</p></div>';
+			echo '<div class="notice notice-warning"><p>' . esc_html__( 'Address Autocomplete for Ninja Forms is not running because Ninja Geolocation is active. Deactivate the free plugin; your existing Address fields and settings remain available in premium.', 'wpgeo-address-autocomplete-for-ninja-forms' ) . '</p></div>';
 		}
 	}
 
@@ -74,7 +74,7 @@ final class Loader {
 	 */
 	public static function dependency_notice() {
 		if ( current_user_can( 'activate_plugins' ) ) {
-			echo '<div class="notice notice-warning"><p>' . esc_html__( 'Address Autocomplete requires Ninja Forms 3.13.2 or newer.', 'address-autocomplete-for-ninja-forms' ) . '</p></div>';
+			echo '<div class="notice notice-warning"><p>' . esc_html__( 'Address Autocomplete requires Ninja Forms 3.13.2 or newer.', 'wpgeo-address-autocomplete-for-ninja-forms' ) . '</p></div>';
 		}
 	}
 }

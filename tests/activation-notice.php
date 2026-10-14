@@ -28,7 +28,7 @@ if ( ! isset( $argv[1] ) ) {
 $case = $argv[1];
 $hosts = array(
 	'address-autocomplete-for-gravity-forms' => array( 'GravityGeolocationAutocomplete', 'GFGEOAC', 'gfgeoac' ),
-	'address-autocomplete-for-ninja-forms' => array( 'NinjaGeolocationAutocomplete', 'NFGEOAC', 'nfgeoac' ),
+	'wpgeo-address-autocomplete-for-ninja-forms' => array( 'NinjaGeolocationAutocomplete', 'NFGEOAC', 'nfgeoac' ),
 	'address-autocomplete-for-formidable-forms' => array( 'FormidableGeolocationAutocomplete', 'FRMGEOAC', 'frmgeoac' ),
 );
 list( $namespace, $constants, $prefix ) = $hosts[ $slug ];

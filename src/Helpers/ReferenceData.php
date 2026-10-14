@@ -492,17 +492,17 @@ final class ReferenceData {
 	public static function get_place_types_as_options() {
 		return self::as_options(
 			[
-				'(regions)'      => __( 'Regions', 'address-autocomplete-for-ninja-forms' ),
-				'(cities)'       => __( 'Cities', 'address-autocomplete-for-ninja-forms' ),
-				'street_address' => __( 'Street addresses', 'address-autocomplete-for-ninja-forms' ),
-				'premise'        => __( 'Premises', 'address-autocomplete-for-ninja-forms' ),
-				'postal_code'    => __( 'Postal codes', 'address-autocomplete-for-ninja-forms' ),
-				'restaurant'     => __( 'Restaurants', 'address-autocomplete-for-ninja-forms' ),
-				'lodging'        => __( 'Lodging', 'address-autocomplete-for-ninja-forms' ),
-				'store'          => __( 'Stores', 'address-autocomplete-for-ninja-forms' ),
-				'school'         => __( 'Schools', 'address-autocomplete-for-ninja-forms' ),
-				'hospital'       => __( 'Hospitals', 'address-autocomplete-for-ninja-forms' ),
-				'airport'        => __( 'Airports', 'address-autocomplete-for-ninja-forms' ),
+				'(regions)'      => __( 'Regions', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'(cities)'       => __( 'Cities', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'street_address' => __( 'Street addresses', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'premise'        => __( 'Premises', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'postal_code'    => __( 'Postal codes', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'restaurant'     => __( 'Restaurants', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'lodging'        => __( 'Lodging', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'store'          => __( 'Stores', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'school'         => __( 'Schools', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'hospital'       => __( 'Hospitals', 'wpgeo-address-autocomplete-for-ninja-forms' ),
+				'airport'        => __( 'Airports', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			]
 		);
 	}

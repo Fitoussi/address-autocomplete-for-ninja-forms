@@ -15,7 +15,7 @@ $root = dirname( __DIR__ );
 $slug = basename( $root );
 $namespaces = array(
 	'address-autocomplete-for-gravity-forms' => 'GravityGeolocationAutocomplete',
-	'address-autocomplete-for-ninja-forms' => 'NinjaGeolocationAutocomplete',
+	'wpgeo-address-autocomplete-for-ninja-forms' => 'NinjaGeolocationAutocomplete',
 	'address-autocomplete-for-formidable-forms' => 'FormidableGeolocationAutocomplete',
 );
 require $root . '/src/Admin/DashboardFeatures.php';
@@ -42,7 +42,7 @@ overview_expect( isset( $extended['future-tool'] ), 'Future definitions must not
 foreach ( array( 'quick-setups', 'templates', 'gmw-integration', 'entry-details', 'unknown' ) as $id ) {
 	overview_expect( array() === $class::get_demo_links( $id ), 'No artificial demo link for unsupported utility cards.' );
 }
-$host = str_replace( array( 'address-autocomplete-for-', '-forms' ), '', $slug );
+$host = str_replace( array( 'wpgeo-', 'address-autocomplete-for-', '-forms' ), '', $slug );
 $base = 'https://demo.' . $host . 'geolocation.com/';
 foreach ( array( 'distance' => 'distance-duration-price-calculations/', 'pricing' => 'distance-duration-price-calculations/', 'directions' => 'routes-directions/', 'drawing' => 'drawing-tools/', 'nearby' => 'nearest-locations/' ) as $id => $path ) {
 	$links = $class::get_demo_links( $id );
