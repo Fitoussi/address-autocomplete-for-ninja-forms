@@ -100,12 +100,12 @@ foreach ( $schema as $key => $definition ) {
 expect( strpos( $schema['nfgeo_force_autocomplete_selection']['help'], 'clear the input' ) !== false, 'Selection help describes blur clearing' );
 expect( strpos( $schema['nfgeo_address_autocomplete_language']['help'], 'global language setting' ) !== false, 'Language help describes global defaults' );
 expect( strpos( $schema['nfgeo_autocomplete_restriction_usage']['help'], 'does not detect' ) !== false, 'Bias help does not promise visitor detection' );
-$products = NinjaGeolocationAutocomplete\Admin\Dashboard::get_products();
+$products = NinjaGeolocationAutocomplete\Admin\Dashboard\Loader::get_products();
 $product_urls = array_column( $products, 'url' );
 expect( count( $product_urls ) === count( array_unique( $product_urls ) ), 'Discovery cards do not duplicate products' );
 expect( in_array( 'https://gravitygeolocation.com/', $product_urls, true ), 'Gravity product is included in discovery cards' );
 expect( count( $schema ) === 13 && count( $schema['nfgeo_address_autocomplete_country']['options'] ) > 200, 'Native country controls' );
-$features = NinjaGeolocationAutocomplete\Admin\DashboardFeatures::get_features();
+$features = NinjaGeolocationAutocomplete\Admin\Dashboard\Features::get_features();
 expect(
 	count(
 		array_filter(
@@ -117,7 +117,8 @@ expect(
 	) === 1,
 	'Only autocomplete included'
 );
-expect( array_keys( NinjaGeolocationAutocomplete\Admin\DashboardFeatures::get_packages() ) === array( 'free', 'starter', 'pro', 'agency' ), 'Host package lineup' );
+expect( array_keys( NinjaGeolocationAutocomplete\Admin\Dashboard\Features::get_packages() ) === array( 'free', 'starter', 'pro' ), 'Current host package lineup' );
+expect( $features['nearby']['packages'] === array( 'pro' ) && $features['drawing']['packages'] === array( 'pro' ), 'Current Pro includes nearby and drawing tools' );
 $processor = new NinjaGeolocationAutocomplete\Features\Form\Runtime\FormGeoProcessor();
 $input     = array(
 	array(

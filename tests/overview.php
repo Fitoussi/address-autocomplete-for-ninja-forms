@@ -18,8 +18,8 @@ $namespaces = array(
 	'wpgeo-address-autocomplete-for-ninja-forms' => 'NinjaGeolocationAutocomplete',
 	'address-autocomplete-for-formidable-forms' => 'FormidableGeolocationAutocomplete',
 );
-require $root . '/src/Admin/DashboardFeatures.php';
-$class = $namespaces[ $slug ] . '\\Admin\\DashboardFeatures';
+require $root . '/src/Admin/Dashboard/Features.php';
+$class = $namespaces[ $slug ] . '\\Admin\\Dashboard\\Features';
 
 function overview_expect( $condition, $message ) {
 	if ( ! $condition ) {
@@ -44,6 +44,13 @@ foreach ( array( 'quick-setups', 'templates', 'gmw-integration', 'entry-details'
 }
 $host = str_replace( array( 'wpgeo-', 'address-autocomplete-for-', '-forms' ), '', $slug );
 $base = 'https://demo.' . $host . 'geolocation.com/';
+if ( 'ninja' === $host ) {
+	overview_expect( array_keys( $class::get_packages() ) === array( 'free', 'starter', 'pro' ), 'Current Ninja comparison has only Free, Starter and Pro.' );
+	foreach ( $features as $feature ) {
+		overview_expect( ! array_diff( $feature['packages'], array_keys( $class::get_packages() ) ), 'Every capability belongs to a current comparison column.' );
+	}
+	overview_expect( $features['drawing']['packages'] === array( 'pro' ) && $features['nearby']['packages'] === array( 'pro' ), 'Complete Pro includes former Agency tools.' );
+}
 foreach ( array( 'distance' => 'distance-duration-price-calculations/', 'pricing' => 'distance-duration-price-calculations/', 'directions' => 'routes-directions/', 'drawing' => 'drawing-tools/', 'nearby' => 'nearest-locations/' ) as $id => $path ) {
 	$links = $class::get_demo_links( $id );
 	overview_expect( count( $links ) === 1 && $links[0]['url'] === $base . $path, 'Dedicated demo URL for ' . $id );
@@ -57,11 +64,11 @@ if ( 'gravity' === $host ) {
 	overview_expect( $class::get_demo_links( 'search' )[0]['url'] === $base . 'full-search/', 'Gravity Search has a dedicated demo.' );
 	overview_expect( array_search( 'search', $expected, true ) < array_search( 'quick-setups', $expected, true ), 'Gravity Search remains among the major capabilities.' );
 }
-$view = file_get_contents( $root . '/src/Admin/views/dashboard.php' );
+$view = file_get_contents( $root . '/src/Admin/Dashboard/views/dashboard.php' );
 overview_expect( false !== strpos( $view, 'dashicons-category' ) && false !== strpos( $view, 'get_demo_links(' ), 'Card rendering uses the package icon and curated demo links.' );
 overview_expect( 1 === preg_match( '/target="_blank"\s+rel="noopener noreferrer"/', $view ), 'Outbound demos retain safe new-tab behavior, including formatted attributes.' );
-require $root . '/src/Admin/Dashboard.php';
-$dashboard_class = $namespaces[ $slug ] . '\\Admin\\Dashboard';
+require $root . '/src/Admin/Dashboard/Loader.php';
+$dashboard_class = $namespaces[ $slug ] . '\\Admin\\Dashboard\\Loader';
 $products = $dashboard_class::get_products();
 $search_products = array_values( array_filter( $products, static function ( $product ) { return 'Gravity Search' === $product['name']; } ) );
 overview_expect( count( $products ) === 7 && count( $search_products ) === 1, 'One Gravity Search card, preserving all six existing product cards.' );

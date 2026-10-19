@@ -4,11 +4,14 @@
  * This presentation-only page never reads licenses, creates forms or writes
  * settings. Actual configuration remains on the native Ninja Forms screen.
  *
- * @package NinjaGeolocationAutocomplete\Admin
+ * @package NinjaGeolocationAutocomplete\Admin\Dashboard
+ *
  * @since 1.0.0
  */
 
-namespace NinjaGeolocationAutocomplete\Admin;
+namespace NinjaGeolocationAutocomplete\Admin\Dashboard;
+
+use NinjaGeolocationAutocomplete\Admin\SetupNotice;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -19,12 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-final class Dashboard {
+final class Loader {
 
 	/**
 	 * Stable product-page identity independent of the installed folder name.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @var string
 	 */
 	private const PAGE_SLUG = 'nfgeoac-dashboard';
@@ -33,6 +37,7 @@ final class Dashboard {
 	 * Native WordPress page hook returned during menu registration.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @var string|false
 	 */
 	private static $page_hook = '';
@@ -41,6 +46,7 @@ final class Dashboard {
 	 * Register the local product page before Ninja Forms initializes.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @return void
 	 */
 	public static function register() {
@@ -55,6 +61,7 @@ final class Dashboard {
 	 * The Settings fallback keeps setup/help available while the host is inactive.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @return void
 	 */
 	public static function register_page() {
@@ -70,6 +77,7 @@ final class Dashboard {
 	 * Add the standalone plugin's overview, settings and documentation links.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param array $links Existing WordPress plugin action links.
 	 * @return array
 	 */
@@ -85,6 +93,7 @@ final class Dashboard {
 	 * Build a local navigation link using a whitelisted, non-mutating section.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param string $section Requested section.
 	 * @return string
 	 */
@@ -98,6 +107,7 @@ final class Dashboard {
 	 * Native settings need only our card styles, not framework dashboard assets.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param string $hook_suffix WordPress screen hook.
 	 * @return void
 	 */
@@ -115,7 +125,7 @@ final class Dashboard {
 
 		wp_enqueue_style(
 			'nfgeo-product-dashboard',
-			NFGEOAC_URL . 'build/css/admin/nfgeo-product-dashboard.min.css',
+			NFGEOAC_URL . 'src/Admin/Dashboard/assets/css/dashboard.min.css',
 			[],
 			NFGEOAC_VERSION
 		);
@@ -126,6 +136,7 @@ final class Dashboard {
 	 * Link to the internal feature overview first and external pricing second.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @return void
 	 */
 	public static function render_settings_link() {
@@ -150,6 +161,7 @@ final class Dashboard {
 	 * callback invocation. The template receives public metadata/URLs only.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @return void
 	 */
 	public static function render() {
@@ -173,10 +185,10 @@ final class Dashboard {
 		$pricing_url  = NFGEOAC_SITE_URL . '/pricing/';
 		$docs_url     = NFGEOAC_SITE_URL . '/docs/';
 		$demo_url     = 'https://demo.ninjageolocation.com/';
-		$product_name = NFGEOAC_PLUGIN_NAME;
+		$product_name = __( 'Address Autocomplete', 'wpgeo-address-autocomplete-for-ninja-forms' );
 		$package_name = NFGEOAC_PACKAGE_LABEL;
-		$features     = DashboardFeatures::get_features();
-		$overview_features = DashboardFeatures::order_for_overview( $features );
+		$features     = Features::get_features();
+		$overview_features = Features::order_for_overview( $features );
 		$included     = array_filter(
 			$overview_features,
 			static function ( $feature ) {
@@ -189,7 +201,7 @@ final class Dashboard {
 				return ! $feature['included'];
 			}
 		);
-		$packages     = DashboardFeatures::get_packages();
+		$packages     = Features::get_packages();
 
 		$hero_title     = __( 'Less typing. Better addresses.', 'wpgeo-address-autocomplete-for-ninja-forms' );
 		$help_step      = __( 'Add the Address field from the Geolocation group and configure its Address Autocomplete options.', 'wpgeo-address-autocomplete-for-ninja-forms' );
@@ -205,6 +217,7 @@ final class Dashboard {
 	 * Return bundled product descriptions without remote content or installers.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @return array[] Public product names, descriptions and website URLs.
 	 */
 	public static function get_products() {

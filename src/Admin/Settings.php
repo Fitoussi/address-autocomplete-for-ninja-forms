@@ -8,6 +8,8 @@
 
 namespace NinjaGeolocationAutocomplete\Admin;
 
+use NinjaGeolocationAutocomplete\Admin\Dashboard\Loader as Dashboard;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

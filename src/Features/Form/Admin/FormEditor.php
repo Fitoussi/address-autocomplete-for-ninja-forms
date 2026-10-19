@@ -84,7 +84,7 @@ final class FormEditor {
 				'section'       => 'nfgeo_geolocation',
 				'name'          => $name,
 				'nicename'      => $feature[0],
-				'link'          => \NinjaGeolocationAutocomplete\Admin\Dashboard::get_url(),
+				'link'          => \NinjaGeolocationAutocomplete\Admin\Dashboard\Loader::get_url(),
 				'plugin_path'   => 'geolocation-for-ninja-forms/geolocation-for-ninja-form.php',
 				'modal_content' => sprintf(
 					'<div class="available-action-modal"><h2>%1$s</h2><p>%2$s</p><p>%3$s</p><div class="actions"><a target="_blank" rel="noopener noreferrer" href="%4$s">%5$s</a><a href="%6$s" class="primary nf-button">%7$s</a></div></div>',
@@ -93,7 +93,7 @@ final class FormEditor {
 					esc_html( $feature[1] ),
 					esc_url( NFGEOAC_SITE_URL . '/pricing/' ),
 					esc_html__( 'View packages', 'wpgeo-address-autocomplete-for-ninja-forms' ),
-					esc_url( \NinjaGeolocationAutocomplete\Admin\Dashboard::get_url() ),
+					esc_url( \NinjaGeolocationAutocomplete\Admin\Dashboard\Loader::get_url() ),
 					esc_html__( 'Explore features', 'wpgeo-address-autocomplete-for-ninja-forms' )
 				),
 			];

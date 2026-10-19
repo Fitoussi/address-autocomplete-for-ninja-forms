@@ -1,10 +1,10 @@
-=== WPGeo Address Autocomplete for Ninja Forms ===
+=== Logical Address Autocomplete for Ninja Forms ===
 Contributors: ninjew
 Tags: address autocomplete, ninja forms, google places, address, geolocation
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -55,7 +55,7 @@ Ninja Geolocation is a separate plugin, not functionality unlocked inside this f
 == Installation ==
 
 1. Install and activate Ninja Forms 3.13.2 or newer.
-2. Install and activate WPGeo Address Autocomplete for Ninja Forms. Deactivate Ninja Geolocation first if you are switching to this free plugin.
+2. Install and activate Logical Address Autocomplete for Ninja Forms. Deactivate Ninja Geolocation first if you are switching to this free plugin.
 3. Open Ninja Forms > Settings and find the Address Autocomplete section.
 4. Enter your Google Maps API key with Maps JavaScript API and Places API (New) enabled.
 5. Set optional global region and language preferences.
@@ -116,6 +116,12 @@ Includes [Choices.js 11.1.0](https://github.com/Choices-js/Choices/tree/v11.1.0)
 4. The plugin overview introduces the included standalone Address Autocomplete integration and links to its configuration.
 
 == Changelog ==
+
+= 1.0.1 =
+* Renamed the plugin to Logical Address Autocomplete for Ninja Forms. The existing plugin slug and saved settings are unchanged.
+* Refreshed the overview navigation and action buttons, aligned discovery-card buttons, and placed admin notices below the navigation.
+* Updated the package comparison to Address Autocomplete, Starter and Pro, including the complete Pro feature set.
+* Organized the overview into a contained dashboard folder without changing autocomplete behavior.
 
 = 1.0.0 =
 * Initial release.

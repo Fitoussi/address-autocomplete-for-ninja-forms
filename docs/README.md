@@ -1,4 +1,42 @@
-# WPGeo Address Autocomplete for Ninja Forms
+# Logical Address Autocomplete for Ninja Forms
+
+## October 19 version 1.0.1 release
+
+The owner authorized the Logical public title and all pending dashboard changes,
+including the contained module, settings-first primary action, modern navigation,
+notices below navigation, bottom-aligned discovery actions and current Starter/Pro
+comparison. Preserve the approved wpgeo-address-autocomplete-for-ninja-forms slug,
+folder, main filename, text domain, translation names, namespace and saved nfgeo data.
+NFGEOAC_PLUGIN_NAME remains Address Autocomplete for Ninja Forms; the overview h1
+remains Address Autocomplete with For Ninja Forms above it. No SDK is introduced.
+The existing published orange banner already omits WPGeo and can be reused exactly.
+The owner reviewed the installed candidate and authorized GitHub and WordPress.org
+publication. The exact tested 40-file ZIP has SHA-256
+872e6e6377e4a7a087606389e112cc71eec4f45b4a4a4b3051c0d759df9897df.
+Locked build, six PHP fixture entrypoints (including PHP 7.4.30), PHP 7.4 lint and
+15 JavaScript tests passed. Test Site 2 browser checks covered all four dashboards,
+native settings, editor discovery dialogs by mouse/Enter, and actual Google
+suggestions, required-selection clearing and a valid retry. Saved forms, entries,
+settings and activation states remained unchanged. Native cards do not respond to
+Space; editor JavaScript is unchanged from 1.0.0. Plugin Check has zero errors and
+one warning for wp in the retained existing slug, also present in public 1.0.0.
+A complete new minimum-host, guest-access, entry-write or conditional/multipage
+installed matrix was not certified. Retain Test Site 2 as reviewed.
+The existing banner exports are recorded in docs/wordpress-org-assets/ and do not
+ship inside the plugin ZIP. No icon, banner or screenshot change is needed in SVN.
+
+## October 17 local dashboard containment refactor
+
+The owner requested the same copyable dashboard module as Gravity Geolocation,
+with no behavior changes. Presentation now lives in src/Admin/Dashboard/:
+Loader.php, Features.php, views/dashboard.php and assets/scss + assets/css.
+Host callers, fixtures, build/watch paths and package checks use the new locations.
+Native settings, setup guards, menus/URLs, feature content and saved data remain
+host-owned and unchanged. No SDK, dependency, source version or published ZIP
+changes. This is unreleased source work, not authorization to publish or install.
+See src/Admin/Dashboard/README.md and the workspace audit at
+artifacts/dashboard-modules-20261017/RESULTS.txt for validation boundaries.
+
 
 ## Standalone bootstrap convention
 
@@ -33,6 +71,9 @@ Only the dedicated Address field is supported. Native Ninja Address/component fi
 ## Structure
 
 - Main plugin: isolated NFGEOAC constants and NinjaGeolocationAutocomplete autoloader.
+- Public plugin/readme title is Logical Address Autocomplete for Ninja Forms. The
+  existing slug and text domain retain wpgeo. Internal NFGEOAC_PLUGIN_NAME is
+  Address Autocomplete for Ninja Forms, without either branding prefix.
 - src/Loader.php: dependency check and premium-wins guard after all bootstraps load.
 - src/Core/Bootstrap.php: native settings, one real Address field and editor/runtime hooks.
 - src/Features/Form/Fields/Address: native text field lifecycle and supported options.

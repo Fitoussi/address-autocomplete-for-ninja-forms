@@ -35,7 +35,7 @@ foreach ( [ 'build.js', 'package.json', 'package-lock.json' ] as $file ) {
 foreach ( [
 	'wpgeo-address-autocomplete-for-ninja-forms.php', 'readme.txt',
 	'assets/js/autocomplete/services/address-autocomplete.js', 'assets/js/editor/form-editor.js',
-	'assets/scss/admin/nfgeo-product-dashboard.scss', 'assets/licenses/choices.txt',
+	'src/Admin/Dashboard/assets/scss/dashboard.scss', 'assets/licenses/choices.txt',
 	'build/js/frontend/address-autocomplete.min.js', 'build/js/admin/nfgeo-form-editor.min.js',
 ] as $file ) {
 	$checks[ 'includes ' . $file ] = in_array( $prefix . $file, $files, true );
@@ -47,7 +47,12 @@ for ( $number = 1; $number <= 4; ++$number ) {
 $checks['no development or private directories'] = ! array_filter( $files, static function ( $file ) use ( $prefix ) {
 	return preg_match( '#^(?:\.git|\.agents|\.codex|\.vscode|docs|tests|tools|vendor|node_modules|dist)/#', substr( $file, strlen( $prefix ) ) );
 } );
+$main = $zip->getFromName( $prefix . 'wpgeo-address-autocomplete-for-ninja-forms.php' );
+$checks['Logical public plugin title'] = false !== strpos( $main, 'Plugin Name: Logical Address Autocomplete for Ninja Forms' );
+$checks['internal plugin name excludes WPGeo'] = false !== strpos( $main, "define( 'NFGEOAC_PLUGIN_NAME', 'Address Autocomplete for Ninja Forms' );" );
+$checks['WPGeo public translation domain'] = false !== strpos( $main, 'Text Domain: wpgeo-address-autocomplete-for-ninja-forms' );
 $readme = $zip->getFromName( $prefix . 'readme.txt' );
+$checks['Logical public readme title'] = false !== strpos( $readme, '=== Logical Address Autocomplete for Ninja Forms ===' );
 $checks['public source and build instructions'] = false !== strpos( $readme, 'https://github.com/Fitoussi/address-autocomplete-for-ninja-forms' )
 	&& false !== strpos( $readme, 'download the repository' )
 	&& false !== strpos( $readme, 'npm ci' ) && false !== strpos( $readme, 'npm run build' );

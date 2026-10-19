@@ -32,7 +32,7 @@ final class Loader {
 			add_action( 'network_admin_notices', [ self::class, 'conflict_notice' ] );
 			return;
 		}
-		Admin\Dashboard::register();
+		Admin\Dashboard\Loader::register();
 		if ( ! class_exists( '\\Ninja_Forms' ) || version_compare( \Ninja_Forms::VERSION, NFGEOAC_MIN_HOST_VERSION, '<' ) ) {
 			add_action( 'admin_notices', [ self::class, 'dependency_notice' ] );
 			return;

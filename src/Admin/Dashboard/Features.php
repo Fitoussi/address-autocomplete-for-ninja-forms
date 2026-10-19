@@ -1,12 +1,13 @@
 <?php
 /**
- * Local feature catalog aligned with the host's Starter, Pro and Agency builds.
+ * Local feature catalog for the current Starter and complete Pro products.
  *
- * @package NinjaGeolocationAutocomplete\Admin
+ * @package NinjaGeolocationAutocomplete\Admin\Dashboard
+ *
  * @since 1.0.0
  */
 
-namespace NinjaGeolocationAutocomplete\Admin;
+namespace NinjaGeolocationAutocomplete\Admin\Dashboard;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -16,12 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-final class DashboardFeatures {
+final class Features {
 
 	/**
 	 * Prioritize major capabilities without changing comparison-table order.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param array<string,array> $features Existing feature definitions.
 	 * @return array<string,array> Overview cards in feature-first order.
 	 */
@@ -63,6 +65,7 @@ final class DashboardFeatures {
 	 * a relevant demo. These are ordinary outbound links, never remote embeds.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param string $feature_id Public feature identifier.
 	 * @return array<array{label:string,url:string}> Feature-specific demo links.
 	 */
@@ -120,7 +123,6 @@ final class DashboardFeatures {
 			'free'    => __( 'Free', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			'starter' => __( 'Starter', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 			'pro'     => __( 'Pro', 'wpgeo-address-autocomplete-for-ninja-forms' ),
-			'agency'  => __( 'Agency', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 		];
 	}
 	/**
@@ -138,7 +140,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Countries, place types, per-field language, location bias, global region and language, and required suggestion selection.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'location-alt',
 				'doc'         => '',
-				'packages'    => [ 'free', 'starter', 'pro', 'agency' ],
+				'packages'    => [ 'free', 'starter', 'pro' ],
 				'included'    => true,
 			],
 			'location-map'      => [
@@ -147,7 +149,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Customize map appearance, zoom, default location and marker behavior.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'location',
 				'doc'         => '',
-				'packages'    => [ 'starter', 'pro', 'agency' ],
+				'packages'    => [ 'starter', 'pro' ],
 				'included'    => false,
 			],
 			'geocoder'          => [
@@ -156,7 +158,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Connect addresses, maps and ordinary fields to shared geocoding results.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'database',
 				'doc'         => '',
-				'packages'    => [ 'starter', 'pro', 'agency' ],
+				'packages'    => [ 'starter', 'pro' ],
 				'included'    => false,
 			],
 			'dynamic-fields'    => [
@@ -165,7 +167,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Use connected values in native fields and your form workflows.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'randomize',
 				'doc'         => '',
-				'packages'    => [ 'starter', 'pro', 'agency' ],
+				'packages'    => [ 'starter', 'pro' ],
 				'included'    => false,
 			],
 			'current-location'  => [
@@ -174,7 +176,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Browser location requires visitor permission; optional IP location needs a provider.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'admin-site-alt3',
 				'doc'         => '',
-				'packages'    => [ 'starter', 'pro', 'agency' ],
+				'packages'    => [ 'starter', 'pro' ],
 				'included'    => false,
 			],
 			'coordinates'       => [
@@ -183,7 +185,7 @@ final class DashboardFeatures {
 				'details'     => __( 'A dedicated input for workflows where an address is not the starting point.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'admin-generic',
 				'doc'         => '',
-				'packages'    => [ 'starter', 'pro', 'agency' ],
+				'packages'    => [ 'starter', 'pro' ],
 				'included'    => false,
 			],
 			'location-controls' => [
@@ -192,7 +194,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Separate controls complement the locator inside premium Address fields.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'controls-repeat',
 				'doc'         => '',
-				'packages'    => [ 'starter', 'pro', 'agency' ],
+				'packages'    => [ 'starter', 'pro' ],
 				'included'    => false,
 			],
 			'directions'        => [
@@ -201,7 +203,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Route maps, summaries and turn-by-turn directions with connected fields.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'leftright',
 				'doc'         => '',
-				'packages'    => [ 'pro', 'agency' ],
+				'packages'    => [ 'pro' ],
 				'included'    => false,
 			],
 			'distance'          => [
@@ -210,7 +212,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Use readable results or numeric distance and duration in form calculations.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'performance',
 				'doc'         => '',
-				'packages'    => [ 'pro', 'agency' ],
+				'packages'    => [ 'pro' ],
 				'included'    => false,
 			],
 			'validation'        => [
@@ -219,7 +221,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Review corrections and validation results. Requires the Address Validation API.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'yes-alt',
 				'doc'         => '',
-				'packages'    => [ 'pro', 'agency' ],
+				'packages'    => [ 'pro' ],
 				'included'    => false,
 			],
 			'entry-maps'        => [
@@ -228,7 +230,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Single-entry and mashup map shortcodes outside your form.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'admin-multisite',
 				'doc'         => '',
-				'packages'    => [ 'pro', 'agency' ],
+				'packages'    => [ 'pro' ],
 				'included'    => false,
 			],
 			'nearby'            => [
@@ -237,7 +239,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Configure destination sources and results with an optional map.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'search',
 				'doc'         => '',
-				'packages'    => [ 'agency' ],
+				'packages'    => [ 'pro' ],
 				'included'    => false,
 			],
 			'drawing'           => [
@@ -246,7 +248,7 @@ final class DashboardFeatures {
 				'details'     => __( 'Collect shapes and geometry outputs on a connected map.', 'wpgeo-address-autocomplete-for-ninja-forms' ),
 				'icon'        => 'edit',
 				'doc'         => '',
-				'packages'    => [ 'agency' ],
+				'packages'    => [ 'pro' ],
 				'included'    => false,
 			],
 		];

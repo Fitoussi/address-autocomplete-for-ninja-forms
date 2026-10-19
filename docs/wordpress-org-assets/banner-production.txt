@@ -1,0 +1,13 @@
+NINJA AUTOCOMPLETE 1.0.1 BANNER
+
+Requested title treatment: Address Autocomplete for Ninja Forms, without WPGeo.
+The existing local SVN banner and published banner already have that exact text.
+The high-resolution files were compared byte-for-byte and match SHA-256:
+d3bc891bb0a7593a4a9896df63a3b731b2ad1734916ca813a6fb3e48f74b37ab
+
+Both existing exports are copied into this candidate's listing-assets directory:
+banner-1544x500.png and banner-772x250.png. No generated derivative, additional
+branding, icon change or screenshot change is necessary. Google Maps attribution
+remains visible. Imagegen skill inspection led to reusing correct existing artwork;
+the generation tool was not called and no edit prompt was submitted.
+No banner was uploaded or staged in SVN during this candidate pass.

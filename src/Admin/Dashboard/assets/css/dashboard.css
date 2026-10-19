@@ -43,7 +43,11 @@
   --nfgeo-page-accent: #15598e;
   color: var(--nfgeo-page-ink);
 }
-.nfgeo-product-dashboard__nav, .nfgeo-product-dashboard__layout {
+.nfgeo-product-dashboard.wrap {
+  max-width: none;
+  margin: 0 0 0 -20px;
+}
+.nfgeo-product-dashboard__layout {
   width: calc(100% - 40px);
   max-width: 1180px;
   margin-right: auto;
@@ -96,8 +100,9 @@
   justify-content: space-between;
   gap: 20px;
   padding: 25px 28px;
-  border: 1px solid var(--nfgeo-page-border);
-  border-radius: 10px 10px 0 0;
+  border: 0;
+  border-bottom: 1px solid var(--nfgeo-page-border);
+  border-radius: 0;
   background: #fff;
 }
 .nfgeo-product-dashboard__header h1 {
@@ -127,25 +132,35 @@
 }
 .nfgeo-product-dashboard__nav {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 4px;
-  margin-top: 22px;
-  margin-bottom: 24px;
-  padding: 8px 20px;
-  border: 1px solid var(--nfgeo-page-border);
-  border-radius: 8px;
+  width: 100%;
+  max-width: none;
+  margin: 0 0 24px;
+  padding: 8px max(20px, (100% - 1180px) / 2);
+  border: 0;
+  border-bottom: 1px solid #e6ecf2;
+  border-radius: 0;
   background: #fff;
 }
 .nfgeo-product-dashboard__nav a {
-  padding: 12px 16px;
+  padding: 10px 16px;
   border-radius: 5px;
-  color: var(--nfgeo-page-muted);
+  color: #526377;
   font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
   text-decoration: none;
 }
+.nfgeo-product-dashboard__nav a:hover {
+  background: #f6f7fb;
+  color: var(--nfgeo-page-ink);
+}
 .nfgeo-product-dashboard__nav a[aria-current=page] {
-  background: #eaf3fb;
-  color: var(--nfgeo-page-accent);
+  background: #e8f3fa;
+  color: #1d6095;
+  font-weight: 600;
 }
 .nfgeo-product-dashboard__layout {
   display: grid;
@@ -224,6 +239,14 @@
   grid-column: 2;
   grid-row: 1/span 6;
   margin: 0;
+}
+.nfgeo-product-dashboard__product-card {
+  display: flex;
+  flex-direction: column;
+}
+.nfgeo-product-dashboard__product-card .button {
+  margin-top: auto;
+  align-self: flex-start;
 }
 .nfgeo-product-dashboard__feature {
   display: flex;
@@ -382,7 +405,14 @@
   background: #68727e;
 }
 @media (max-width: 782px) {
-  .nfgeo-product-dashboard__nav, .nfgeo-product-dashboard__layout {
+  .nfgeo-product-dashboard.wrap {
+    margin-left: -10px;
+  }
+  .nfgeo-product-dashboard__nav {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+  .nfgeo-product-dashboard__layout {
     width: calc(100% - 24px);
   }
 }
@@ -400,6 +430,6 @@
     font-size: 28px;
   }
   .nfgeo-product-dashboard__nav {
-    padding: 8px;
+    padding: 8px 12px;
   }
 }

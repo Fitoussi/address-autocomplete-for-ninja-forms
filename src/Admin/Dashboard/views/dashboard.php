@@ -1,6 +1,6 @@
 <?php
 /**
- * Standalone product overview. Public variables come from Admin\Dashboard::render().
+ * Standalone product overview. Public variables come from Admin\Dashboard\Loader::render().
  * Screenshot markers reserve our own local assets; no remote embeds or tracking.
  * Availability markers describe packaged implementations, not completed setup.
  *
@@ -8,7 +8,7 @@
  * @since 1.0.0
  */
 
-use NinjaGeolocationAutocomplete\Admin\Dashboard;
+use NinjaGeolocationAutocomplete\Admin\Dashboard\Loader as Dashboard;
 
 // Included inside Dashboard::render(); these presentation variables are method-local.
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
@@ -24,17 +24,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 		<div class="nfgeo-product-dashboard__actions">
 			<span class="nfgeo-product-dashboard__version"><?php echo esc_html( 'v' . $version ); ?></span>
+			<a class="button button-primary" href="<?php echo esc_url( $settings_url ); ?>"><?php esc_html_e( 'Open Settings', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></a>
+			<a class="button" href="<?php echo esc_url( $demo_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'View Live Demos', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></a>
 			<a class="button" href="<?php echo esc_url( Dashboard::get_url( 'products' ) ); ?>"><?php esc_html_e( 'Explore Plugins', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></a>
-			<a class="button" href="<?php echo esc_url( $settings_url ); ?>"><?php esc_html_e( 'Open Settings', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></a>
-			<a class="button button-primary" href="<?php echo esc_url( $demo_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'View Live Demos', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></a>
 		</div>
 	</header>
-	<hr class="wp-header-end">
 	<nav class="nfgeo-product-dashboard__nav" aria-label="<?php esc_attr_e( 'Product overview sections', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?>">
 		<?php foreach ( $tabs as $key => $label ) : ?>
 			<a href="<?php echo esc_url( Dashboard::get_url( $key ) ); ?>" aria-current="<?php echo $section === $key ? 'page' : 'false'; ?>"><?php echo esc_html( $label ); ?></a>
 		<?php endforeach; ?>
 	</nav>
+	<hr class="wp-header-end">
 	<div class="nfgeo-product-dashboard__layout">
 		<main class="nfgeo-product-dashboard__main">
 			<?php if ( 'overview' === $section ) : ?>
@@ -94,7 +94,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 												/* translators: %s: Comma-separated package names that include this feature. */
 												echo esc_html( sprintf( __( 'Included in: %s', 'wpgeo-address-autocomplete-for-ninja-forms' ), implode( ', ', array_intersect_key( $packages, array_flip( $feature['packages'] ) ) ) ) );
 											?></span></p>
-											<?php $feature_demos = \NinjaGeolocationAutocomplete\Admin\DashboardFeatures::get_demo_links( $item_id ); ?>
+											<?php $feature_demos = \NinjaGeolocationAutocomplete\Admin\Dashboard\Features::get_demo_links( $item_id ); ?>
 											<?php if ( $feature_demos ) : ?>
 												<div class="nfgeo-product-dashboard__demo-links">
 													<?php foreach ( $feature_demos as $feature_demo ) : ?>
@@ -112,7 +112,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php if ( $available ) : ?>
 					<section class="nfgeo-product-dashboard__upgrade">
 						<h2><?php esc_html_e( 'Choose the tools your next project needs', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></h2>
-						<p><?php esc_html_e( 'Starter adds connected location tools. Pro adds directions, distance, validation and entry maps. Agency also includes nearby locations and drawing tools.', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></p>
+						<p><?php esc_html_e( 'Starter includes connected location tools. Pro includes the complete toolkit: directions, distance, validation, entry maps, nearby locations and drawing tools. Choose your site allowance without changing the included features.', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></p>
 						<a class="button button-primary" href="<?php echo esc_url( $pricing_url ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'View packages & pricing', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?></a>
 					</section>
 				<?php endif; ?>
@@ -175,7 +175,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</section>
 				<div class="nfgeo-product-dashboard__feature-grid">
 					<?php foreach ( Dashboard::get_products() as $product ) : ?>
-						<article class="nfgeo-product-dashboard__card">
+						<article class="nfgeo-product-dashboard__card nfgeo-product-dashboard__product-card">
 							<h2><?php echo esc_html( $product['name'] ); ?></h2>
 							<p><?php echo esc_html( $product['description'] ); ?></p>
 							<a class="button" href="<?php echo esc_url( $product['url'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Learn more', 'wpgeo-address-autocomplete-for-ninja-forms' ); ?><span class="screen-reader-text"> — <?php echo esc_html( $product['name'] ); ?></span></a>

@@ -35,15 +35,20 @@ try {
 		throw new RuntimeException( 'The readme stable tag must match the plugin version.' );
 	}
 
-	$required = array(
+	$required = [
+		'src/Admin/Dashboard/Loader.php',
+		'src/Admin/Dashboard/Features.php',
+		'src/Admin/Dashboard/views/dashboard.php',
+		'src/Admin/Dashboard/assets/scss/dashboard.scss',
+		'src/Admin/Dashboard/assets/css/dashboard.css',
 		'build/js/frontend/address-autocomplete.min.js',
 		'build/js/admin/nfgeo-form-editor.min.js',
 		'build/css/admin/nfgeo-admin.min.css',
-		'build/css/admin/nfgeo-product-dashboard.min.css',
+		'src/Admin/Dashboard/assets/css/dashboard.min.css',
 		'assets/css/address-autocomplete.css',
 		'assets/css/choices.css',
 		'assets/licenses/choices.txt',
-	);
+	];
 	foreach ( $required as $path ) {
 		if ( ! is_file( $root . '/' . $path ) ) {
 			throw new RuntimeException( 'Missing asset: ' . $path . '. Run npm run build first.' );

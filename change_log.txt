@@ -1,2 +1,11 @@
+Logical Address Autocomplete for Ninja Forms
+
+1.0.1
+-----
+* Renamed the public plugin title to Logical Address Autocomplete for Ninja Forms; retained the existing slug and saved settings.
+* Refreshed overview navigation and action buttons, aligned discovery-card buttons, and moved admin notices below navigation.
+* Updated the comparison to Address Autocomplete, Starter and Pro, including all current Pro features.
+* Contained the overview in its own dashboard folder without changing autocomplete behavior.
+
 1.0.0
 * Initial release.
